@@ -72,7 +72,7 @@ mcc_array <- character(length(maxK))
 
 # NEW PART:
 
-c_array = c(0.01, 0.1, 1, 10, 100)
+c_array = c(0.001, 0.01, 0.1, 1, 10)
 mccCounter = 1
 
 cat("\n[Optimization of the hyper-parameter k start]\n")

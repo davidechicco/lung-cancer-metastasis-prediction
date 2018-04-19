@@ -324,8 +324,8 @@ print("LEARN_RATE = ".. tostring(LEARN_RATE));
 print("ITERATIONS = ".. tostring(ITERATIONS)); 
 
 -- local hidden_layers = 1 -- best is 1
-local hiddenUnitVect = {5} -- ,10, 25,50,75,100,125,150,175,200,225,250,275,300,350,400}
-local hiddenLayerVect = {1} --, 2, 3}
+local hiddenUnitVect = {5,10,25,50,75,100,125,150,175,200,225,250,275,300,350,400}
+local hiddenLayerVect = {1, 2, 3}
 -- local hiddenLayerVect = {1}
 local n_random_starts = 20
 

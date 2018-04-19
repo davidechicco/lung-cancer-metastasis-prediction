@@ -1,0 +1,37 @@
+
+== Including "Stage" ==
+
+* linear regression:
+MCC = +0.87
+
+* support vector machine (with optimized C=0.01)
+MCC = +0.81
+
+* k-nearest neighbors (with optimized k=19)
+MCC = +0.76
+
+* deep perceptron neural network (with optimized numbers of hidden units and hidden layers)
+MCC = +1.0
+
+I ran a random forest algorithm (random_forest.r) and noticed that Stage is a very important feature.
+I also ran some scripts (correlation.r) which computed the Pearson, Spearman, Kendall correlations and confirmed the relation.
+
+The dataset's main paper also explains that the Stage is strictly correlated with the Metastasis (Table 2 https://doi.org/10.1371/journal.pone.0184370.t002 ).
+"Stage 4" = "Metastasis M1 = 1 = tumor spread to distant organs"
+
+
+
+== Excluding "Stage" ==
+
+* linear regression:
+MCC = +0.66
+
+* k-nearest neighbors (with optimized k=8)
+MCC = +0.67
+
+* support vector machine (with optimized C=0.01)
+MCC = +0.60
+
+
+
+

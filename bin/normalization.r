@@ -33,8 +33,8 @@ lung_cancer_data$Metastasis <- lung_cancer_data$M
 lung_cancer_data$M <- NULL
 
 
-print("M0 = 0 = NOT spread to distant organs")
-print("M1 = 1 = spread to distant organs")
+print("M0 = 0 = tumor NOT spread to distant organs")
+print("M1 = 1 = tumor spread to distant organs")
 
 table(lung_cancer_data$Metastasis)  # it helps us to get the numbers of patients
 lung_cancer_data$Metastasis <- factor(lung_cancer_data$Metastasis, levels = c("M0", "M1"), labels = c("0", "1"))
@@ -59,6 +59,8 @@ for(i in 1:(num_of_columns_original))
   }
   j = j + 1
 }
+
+lung_cancer_data_num$Stage <- NULL
 
 num_of_columns <- dim(lung_cancer_data_num)[2]
 num_of_features <- num_of_columns - 1

@@ -75,15 +75,11 @@ mcc_array <- character(length(maxK))
 
 # NEW PART:
 
-cat("\n[Optimization of the hyper-parameter k start]\n")
-# optimizaion loop
-for(thisK in 1:10)
-{
   # apply k-NN with the current K value
   # train on the training set, evaluate in the validation set by computing the MCC
   # save the MCC corresponding to the current K value
   
-  cat("[Training the linear regression model (with C=",thisK,") on training set & applying the linear regression model to the validation set]\n", sep="")
+  cat("[Training the linear regression model on training set & applying the linear regression model to the validation set]\n", sep="")
   
   # prc_data_validation_pred <- knn(train = prc_data_train, test = prc_data_validation, cl = prc_data_train_labels, k=thisK)
   # svm_model <- svm(Biopsy ~ ., cost=thisK, data=prc_data_train, method = "C-classification", kernel = "linear")
@@ -116,23 +112,12 @@ for(thisK in 1:10)
   
   
   mcc_outcome <- mcc(prc_data_validation_labels_binary, prc_data_validation_pred_binary)
-  cat("When C=",thisK,", the MCC value is ",mcc_outcome, "\t (worst possible: -1; best possible: +1)\n", sep="")
-  
-  mcc_array[thisK] <- mcc_outcome
-  
-}
-
-# select the k corresponding to the highest MCC and call it k_best
-bestMCC <- max(mcc_array)
-bestK <- match(bestMCC, mcc_array)
-cat("\nThe best k value is ", bestK,", corresponding to MCC=", mcc_array[bestK],"\n", sep="")
-
-cat("[Optimization end]\n\n")
+  cat("Validation: the MCC value is ",mcc_outcome, "\t (worst possible: -1; best possible: +1)\n", sep="")
 
 
 # apply k-NN with k_best to the test set
 
-cat("[Training the linear regression model (with the OPTIMIZED hyper-parameter C=",bestK,") on training set & applying the linear regression to test set]\n", sep="")
+cat("[Training the linear regression model on training set & applying the linear regression to test set]\n", sep="")
 #prc_data_test_pred <- knn(train = prc_data_train, test = prc_data_test, cl = prc_data_train_labels, k=bestK)
 
 # svm_model_new <- svm(Biopsy ~ ., cost=bestK, data=prc_data_train, method = "C-classification", kernel = "linear")
