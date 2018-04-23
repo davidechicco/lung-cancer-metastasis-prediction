@@ -214,7 +214,14 @@ function confusion_matrix(predictionTestVect, truthVect, threshold, printValues)
 		else print("Matthews correlation coefficient = NOT computable");	end
 
       	accuracy = (tp + tn)/(tp + tn +fn + fp)
-      	print("accuracy = "..round(accuracy,2).. " = (tp + tn) / (tp + tn +fn + fp) \t  \t [worst = -1, best =  +1]");
+      	print("accuracy = "..round(accuracy,2).. " = (tp + tn) / (tp + tn +fn + fp) \t  \t [worst = 0, best =  1]");
+	
+
+	recall = tp / (tp + fn)
+	print("recall = "..round(recall,2).. " = tp / (tp + fn) \t  \t [worst = 0, best =  1]");
+
+	specificity = tn / (tn + fp)
+	print("specificity = "..round(specificity,2).. " = tn / (tn + fp) \t  \t [worst = 0, best =  1]");
 
       	f1_score = -2
       	if (tp+fp+fn)>0 then   
@@ -267,10 +274,11 @@ function round(num, idp)
 	return math.floor(num * mult + 0.5) / mult
 end
 
--- ##############################3
+-- ##############################
 local profile_vett = {}
 local csv = require("csv")
-local fileName = tostring(arg[1])
+local fileName = "../data/LungCancerDataset_AllRecords_NORM.csv"
+--     tostring(arg[1])
 -- cervical_arranged_NORM.csv
 -- cervical_arranged_NORM_ONLY_BIOPSY_TARGET.csv
 

@@ -1,0 +1,2791 @@
+Your job 653219 ("-2018-04-20_rand28774_allOn_lr0.01_ite500") has been submitted
+
+
+ @ @ @ @ @ @ START @ @ @ @ @ @ @ 	
+file: script_start.lua	
+author Davide Chicco <davide.chicco@gmail.com>	
+Fri Apr 20 14:42:22 2018	
+Readin' ../data/LungCancerDataset_AllRecords_NORM.csv	
+
+OPTIM_PACKAGE  = true	
+XAVIER_INITIALIZATION = true	
+DROPOUT_FLAG = true	
+MOMENTUM_ALPHA = 0.5	
+MOMENTUM = true	
+LEARN_RATE = 0.001	
+ITERATIONS = 500	
+Number of value profiles (rows) = 10443	
+Number features (columns) = 27	
+Number of targets (rows) = 10443	
+#patients_vett = 10443	
+
+training_set_size = 6266	
+validation_set_size = 2089	
+test_set_size = 2088
+	
+$$$ hidden_units = 5	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.038 	error progress = 4.509%
+completion: 8% (epoch=40)(element=6266) loss = 0.107 	error progress = 4.40591%
+completion: 12% (epoch=60)(element=6266) loss = 0.107 	error progress = 4.30436%
+completion: 16% (epoch=80)(element=6266) loss = 0.038 	error progress = 4.25256%
+completion: 20% (epoch=100)(element=6266) loss = 0.001 	error progress = 4.21985%
+completion: 24% (epoch=120)(element=6266) loss = 0.035 	error progress = 4.19746%
+completion: 28% (epoch=140)(element=6266) loss = 0.035 	error progress = 4.1807%
+completion: 32% (epoch=160)(element=6266) loss = 0.035 	error progress = 4.16706%
+completion: 36% (epoch=180)(element=6266) loss = 0.125 	error progress = 4.15756%
+completion: 40% (epoch=200)(element=6266) loss = 0.053 	error progress = 4.14316%
+completion: 44% (epoch=220)(element=6266) loss = 0.008 	error progress = 4.13176%
+completion: 48% (epoch=240)(element=6266) loss = 0.117 	error progress = 4.12174%
+completion: 52% (epoch=260)(element=6266) loss = 0.006 	error progress = 4.11122%
+completion: 56% (epoch=280)(element=6266) loss = 0.051 	error progress = 4.09754%
+completion: 60% (epoch=300)(element=6266) loss = 0.047 	error progress = 4.0836%
+completion: 64% (epoch=320)(element=6266) loss = 0.1 	error progress = 4.07219%
+completion: 68% (epoch=340)(element=6266) loss = 0.007 	error progress = 4.06137%
+completion: 72% (epoch=360)(element=6266) loss = 0.012 	error progress = 4.05223%
+completion: 76% (epoch=380)(element=6266) loss = 0.008 	error progress = 4.04367%
+completion: 80% (epoch=400)(element=6266) loss = 0.017 	error progress = 4.0363%
+completion: 84% (epoch=420)(element=6266) loss = 0.052 	error progress = 4.02942%
+completion: 88% (epoch=440)(element=6266) loss = 0.047 	error progress = 4.02286%
+completion: 92% (epoch=460)(element=6266) loss = 0.008 	error progress = 4.01711%
+completion: 96% (epoch=480)(element=6266) loss = 0.05 	error progress = 4.01202%
+completion: 100% (epoch=500)(element=6266) loss = 0.016 	error progress = 4.007%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 77.69%	
+#FPplusFN=2089	
+minError=422	minErrorIndex=1	globalThreshold =-1.3824317685269	
+metrics area_roc = 73.98%	
+(beta) metrics area_precision_recall = 41.73%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 457 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 59 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 9 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,564 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.26	::::
+	
+accuracy = 0.78 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.11 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.99 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.2 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus5_hl1_time1524250105
+	
+$$$ hidden_units = 10	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0 	error progress = 3.55008%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 3.31834%
+completion: 12% (epoch=60)(element=6266) loss = 0.004 	error progress = 3.21321%
+completion: 16% (epoch=80)(element=6266) loss = 0.022 	error progress = 3.15106%
+completion: 20% (epoch=100)(element=6266) loss = 0.004 	error progress = 3.11244%
+completion: 24% (epoch=120)(element=6266) loss = 0.023 	error progress = 3.08475%
+completion: 28% (epoch=140)(element=6266) loss = 0.004 	error progress = 3.06131%
+completion: 32% (epoch=160)(element=6266) loss = 0.024 	error progress = 3.04222%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 3.02531%
+completion: 40% (epoch=200)(element=6266) loss = 0.021 	error progress = 3.01047%
+completion: 44% (epoch=220)(element=6266) loss = 0.001 	error progress = 2.99626%
+completion: 48% (epoch=240)(element=6266) loss = 0.027 	error progress = 2.98444%
+completion: 52% (epoch=260)(element=6266) loss = 0.003 	error progress = 2.97099%
+completion: 56% (epoch=280)(element=6266) loss = 0.023 	error progress = 2.95907%
+completion: 60% (epoch=300)(element=6266) loss = 0.001 	error progress = 2.94897%
+completion: 64% (epoch=320)(element=6266) loss = 0.005 	error progress = 2.93956%
+completion: 68% (epoch=340)(element=6266) loss = 0.021 	error progress = 2.93152%
+completion: 72% (epoch=360)(element=6266) loss = 0.023 	error progress = 2.92359%
+completion: 76% (epoch=380)(element=6266) loss = 0.023 	error progress = 2.9163%
+completion: 80% (epoch=400)(element=6266) loss = 0.022 	error progress = 2.90961%
+completion: 84% (epoch=420)(element=6266) loss = 0.022 	error progress = 2.90394%
+completion: 88% (epoch=440)(element=6266) loss = 0.021 	error progress = 2.89824%
+completion: 92% (epoch=460)(element=6266) loss = 0.022 	error progress = 2.8928%
+completion: 96% (epoch=480)(element=6266) loss = 0.024 	error progress = 2.8875%
+completion: 100% (epoch=500)(element=6266) loss = 0.02 	error progress = 2.88277%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 81.09%	
+#FPplusFN=2089	
+minError=300	minErrorIndex=1	globalThreshold =-0.97046823360262	
+metrics area_roc = 89.51%	
+(beta) metrics area_precision_recall = 64.34%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 381 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 135 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 14 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,559 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.42	::::
+	
+accuracy = 0.81 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.26 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.99 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.41 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus10_hl1_time1524250469
+	
+$$$ hidden_units = 25	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.002 	error progress = 3.23388%
+completion: 8% (epoch=40)(element=6266) loss = 0.008 	error progress = 2.95193%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.80018%
+completion: 16% (epoch=80)(element=6266) loss = 0.027 	error progress = 2.70451%
+completion: 20% (epoch=100)(element=6266) loss = 0.001 	error progress = 2.63273%
+completion: 24% (epoch=120)(element=6266) loss = 0.002 	error progress = 2.57867%
+completion: 28% (epoch=140)(element=6266) loss = 0.005 	error progress = 2.53673%
+completion: 32% (epoch=160)(element=6266) loss = 0.01 	error progress = 2.50374%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 2.47678%
+completion: 40% (epoch=200)(element=6266) loss = 0.012 	error progress = 2.45258%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 2.43181%
+completion: 48% (epoch=240)(element=6266) loss = 0.005 	error progress = 2.41456%
+completion: 52% (epoch=260)(element=6266) loss = 0.008 	error progress = 2.39855%
+completion: 56% (epoch=280)(element=6266) loss = 0.014 	error progress = 2.38387%
+completion: 60% (epoch=300)(element=6266) loss = 0.01 	error progress = 2.37046%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 2.35836%
+completion: 68% (epoch=340)(element=6266) loss = 0.042 	error progress = 2.34735%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 2.33734%
+completion: 76% (epoch=380)(element=6266) loss = 0.01 	error progress = 2.3269%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 2.31855%
+completion: 84% (epoch=420)(element=6266) loss = 0.011 	error progress = 2.31%
+completion: 88% (epoch=440)(element=6266) loss = 0.001 	error progress = 2.3018%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 2.29466%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 2.28752%
+completion: 100% (epoch=500)(element=6266) loss = 0.002 	error progress = 2.28056%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 85.21%	
+#FPplusFN=2089	
+minError=243	minErrorIndex=1	globalThreshold =-1.3780093365412	
+metrics area_roc = 90.55%	
+(beta) metrics area_precision_recall = 69.17%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 286 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 230 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 23 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,550 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.57	::::
+	
+accuracy = 0.85 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.45 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.99 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.6 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus25_hl1_time1524250847
+	
+$$$ hidden_units = 50	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.003 	error progress = 2.89293%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 2.64277%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.52028%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.43828%
+completion: 20% (epoch=100)(element=6266) loss = 0.003 	error progress = 2.38134%
+completion: 24% (epoch=120)(element=6266) loss = 0.01 	error progress = 2.33506%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 2.29966%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 2.2695%
+completion: 36% (epoch=180)(element=6266) loss = 0.008 	error progress = 2.24375%
+completion: 40% (epoch=200)(element=6266) loss = 0.003 	error progress = 2.22109%
+completion: 44% (epoch=220)(element=6266) loss = 0.005 	error progress = 2.20135%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 2.18388%
+completion: 52% (epoch=260)(element=6266) loss = 0.025 	error progress = 2.16743%
+completion: 56% (epoch=280)(element=6266) loss = 0.001 	error progress = 2.15233%
+completion: 60% (epoch=300)(element=6266) loss = 0.002 	error progress = 2.13893%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 2.12655%
+completion: 68% (epoch=340)(element=6266) loss = 0.001 	error progress = 2.11461%
+completion: 72% (epoch=360)(element=6266) loss = 0.004 	error progress = 2.10355%
+completion: 76% (epoch=380)(element=6266) loss = 0.026 	error progress = 2.09252%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 2.08247%
+completion: 84% (epoch=420)(element=6266) loss = 0.001 	error progress = 2.07348%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 2.06487%
+completion: 92% (epoch=460)(element=6266) loss = 0.005 	error progress = 2.05679%
+completion: 96% (epoch=480)(element=6266) loss = 0.006 	error progress = 2.04912%
+completion: 100% (epoch=500)(element=6266) loss = 0.008 	error progress = 2.04164%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 86.98%	
+#FPplusFN=2089	
+minError=227	minErrorIndex=1	globalThreshold =-1.3611593322009	
+metrics area_roc = 90.78%	
+(beta) metrics area_precision_recall = 71.03%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 242 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 274 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 30 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,543 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.63	::::
+	
+accuracy = 0.87 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.53 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.67 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus50_hl1_time1524251262
+	
+$$$ hidden_units = 75	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0 	error progress = 2.85043%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 2.57159%
+completion: 12% (epoch=60)(element=6266) loss = 0.005 	error progress = 2.43364%
+completion: 16% (epoch=80)(element=6266) loss = 0.015 	error progress = 2.34881%
+completion: 20% (epoch=100)(element=6266) loss = 0.001 	error progress = 2.28981%
+completion: 24% (epoch=120)(element=6266) loss = 0.007 	error progress = 2.24399%
+completion: 28% (epoch=140)(element=6266) loss = 0.001 	error progress = 2.20868%
+completion: 32% (epoch=160)(element=6266) loss = 0.004 	error progress = 2.1779%
+completion: 36% (epoch=180)(element=6266) loss = 0.022 	error progress = 2.15152%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 2.12894%
+completion: 44% (epoch=220)(element=6266) loss = 0.006 	error progress = 2.10841%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 2.08956%
+completion: 52% (epoch=260)(element=6266) loss = 0.002 	error progress = 2.07244%
+completion: 56% (epoch=280)(element=6266) loss = 0.001 	error progress = 2.0573%
+completion: 60% (epoch=300)(element=6266) loss = 0.004 	error progress = 2.04305%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 2.03016%
+completion: 68% (epoch=340)(element=6266) loss = 0.006 	error progress = 2.01762%
+completion: 72% (epoch=360)(element=6266) loss = 0.004 	error progress = 2.00554%
+completion: 76% (epoch=380)(element=6266) loss = 0.016 	error progress = 1.99396%
+completion: 80% (epoch=400)(element=6266) loss = 0.002 	error progress = 1.98338%
+completion: 84% (epoch=420)(element=6266) loss = 0.006 	error progress = 1.97314%
+completion: 88% (epoch=440)(element=6266) loss = 0.007 	error progress = 1.96303%
+completion: 92% (epoch=460)(element=6266) loss = 0.006 	error progress = 1.95371%
+completion: 96% (epoch=480)(element=6266) loss = 0.014 	error progress = 1.94463%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.93589%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 86.31%	
+#FPplusFN=2089	
+minError=221	minErrorIndex=1	globalThreshold =-1.389848245485	
+metrics area_roc = 91.41%	
+(beta) metrics area_precision_recall = 70.39%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 259 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 257 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 27 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,546 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.61	::::
+	
+accuracy = 0.86 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.5 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.64 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus75_hl1_time1524251724
+	
+$$$ hidden_units = 100	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0 	error progress = 2.74945%
+completion: 8% (epoch=40)(element=6266) loss = 0.001 	error progress = 2.47958%
+completion: 12% (epoch=60)(element=6266) loss = 0.001 	error progress = 2.34233%
+completion: 16% (epoch=80)(element=6266) loss = 0.001 	error progress = 2.25828%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.19952%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.15568%
+completion: 28% (epoch=140)(element=6266) loss = 0.001 	error progress = 2.11881%
+completion: 32% (epoch=160)(element=6266) loss = 0.001 	error progress = 2.08917%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 2.06325%
+completion: 40% (epoch=200)(element=6266) loss = 0.003 	error progress = 2.04049%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 2.01964%
+completion: 48% (epoch=240)(element=6266) loss = 0.004 	error progress = 2.00092%
+completion: 52% (epoch=260)(element=6266) loss = 0.002 	error progress = 1.98287%
+completion: 56% (epoch=280)(element=6266) loss = 0.007 	error progress = 1.96615%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.95062%
+completion: 64% (epoch=320)(element=6266) loss = 0.003 	error progress = 1.93607%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.922%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 1.90799%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.895%
+completion: 80% (epoch=400)(element=6266) loss = 0.003 	error progress = 1.88278%
+completion: 84% (epoch=420)(element=6266) loss = 0.004 	error progress = 1.87088%
+completion: 88% (epoch=440)(element=6266) loss = 0.002 	error progress = 1.86025%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.84975%
+completion: 96% (epoch=480)(element=6266) loss = 0.001 	error progress = 1.83985%
+completion: 100% (epoch=500)(element=6266) loss = 0.004 	error progress = 1.83085%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 87.79%	
+#FPplusFN=2089	
+minError=208	minErrorIndex=1	globalThreshold =-1.2400448941983	
+metrics area_roc = 91.61%	
+(beta) metrics area_precision_recall = 72.82%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 231 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 285 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 24 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,549 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.65	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.55 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.69 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus100_hl1_time1524252239
+	
+$$$ hidden_units = 125	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.002 	error progress = 2.71745%
+completion: 8% (epoch=40)(element=6266) loss = 0.003 	error progress = 2.46484%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.32643%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.23881%
+completion: 20% (epoch=100)(element=6266) loss = 0.001 	error progress = 2.17443%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.12577%
+completion: 28% (epoch=140)(element=6266) loss = 0.001 	error progress = 2.08605%
+completion: 32% (epoch=160)(element=6266) loss = 0.008 	error progress = 2.05226%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 2.02227%
+completion: 40% (epoch=200)(element=6266) loss = 0.01 	error progress = 1.99556%
+completion: 44% (epoch=220)(element=6266) loss = 0.003 	error progress = 1.9715%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 1.94942%
+completion: 52% (epoch=260)(element=6266) loss = 0.006 	error progress = 1.92945%
+completion: 56% (epoch=280)(element=6266) loss = 0.004 	error progress = 1.91039%
+completion: 60% (epoch=300)(element=6266) loss = 0.016 	error progress = 1.89312%
+completion: 64% (epoch=320)(element=6266) loss = 0.001 	error progress = 1.87707%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.86226%
+completion: 72% (epoch=360)(element=6266) loss = 0.004 	error progress = 1.84774%
+completion: 76% (epoch=380)(element=6266) loss = 0.001 	error progress = 1.8347%
+completion: 80% (epoch=400)(element=6266) loss = 0.002 	error progress = 1.82207%
+completion: 84% (epoch=420)(element=6266) loss = 0.002 	error progress = 1.81034%
+completion: 88% (epoch=440)(element=6266) loss = 0.013 	error progress = 1.79916%
+completion: 92% (epoch=460)(element=6266) loss = 0.002 	error progress = 1.78871%
+completion: 96% (epoch=480)(element=6266) loss = 0.002 	error progress = 1.77852%
+completion: 100% (epoch=500)(element=6266) loss = 0.002 	error progress = 1.76906%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 87.51%	
+#FPplusFN=2089	
+minError=213	minErrorIndex=1	globalThreshold =-1.4138274041508	
+metrics area_roc = 91.97%	
+(beta) metrics area_precision_recall = 72.7%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 238 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 278 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 23 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,550 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.64	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.54 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.99 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.68 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus125_hl1_time1524252816
+	
+$$$ hidden_units = 150	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0 	error progress = 2.64621%
+completion: 8% (epoch=40)(element=6266) loss = 0.003 	error progress = 2.41077%
+completion: 12% (epoch=60)(element=6266) loss = 0.006 	error progress = 2.28244%
+completion: 16% (epoch=80)(element=6266) loss = 0.001 	error progress = 2.19998%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.14002%
+completion: 24% (epoch=120)(element=6266) loss = 0.002 	error progress = 2.09319%
+completion: 28% (epoch=140)(element=6266) loss = 0.002 	error progress = 2.05348%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 2.02154%
+completion: 36% (epoch=180)(element=6266) loss = 0.001 	error progress = 1.99325%
+completion: 40% (epoch=200)(element=6266) loss = 0.004 	error progress = 1.96674%
+completion: 44% (epoch=220)(element=6266) loss = 0.006 	error progress = 1.9432%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.92136%
+completion: 52% (epoch=260)(element=6266) loss = 0.003 	error progress = 1.90074%
+completion: 56% (epoch=280)(element=6266) loss = 0.009 	error progress = 1.88184%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.8642%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.84779%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.8318%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.817%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.8028%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.78939%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.77686%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.76469%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.75342%
+completion: 96% (epoch=480)(element=6266) loss = 0.001 	error progress = 1.7426%
+completion: 100% (epoch=500)(element=6266) loss = 0.001 	error progress = 1.73236%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.18%	
+#FPplusFN=2089	
+minError=217	minErrorIndex=1	globalThreshold =-1.3399690255598	
+metrics area_roc = 91.69%	
+(beta) metrics area_precision_recall = 73.51%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 221 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 295 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 26 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,547 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.66	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.57 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.7 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus150_hl1_time1524253458
+	
+$$$ hidden_units = 175	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.012 	error progress = 2.63946%
+completion: 8% (epoch=40)(element=6266) loss = 0.001 	error progress = 2.38789%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.25742%
+completion: 16% (epoch=80)(element=6266) loss = 0.014 	error progress = 2.17348%
+completion: 20% (epoch=100)(element=6266) loss = 0.001 	error progress = 2.1138%
+completion: 24% (epoch=120)(element=6266) loss = 0.001 	error progress = 2.06778%
+completion: 28% (epoch=140)(element=6266) loss = 0.001 	error progress = 2.02957%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.99656%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 1.96653%
+completion: 40% (epoch=200)(element=6266) loss = 0.001 	error progress = 1.94039%
+completion: 44% (epoch=220)(element=6266) loss = 0.002 	error progress = 1.9163%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.89427%
+completion: 52% (epoch=260)(element=6266) loss = 0.001 	error progress = 1.87354%
+completion: 56% (epoch=280)(element=6266) loss = 0.001 	error progress = 1.85368%
+completion: 60% (epoch=300)(element=6266) loss = 0.002 	error progress = 1.83521%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.81838%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.80258%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.7877%
+completion: 76% (epoch=380)(element=6266) loss = 0.003 	error progress = 1.7736%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.75994%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.74681%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.73428%
+completion: 92% (epoch=460)(element=6266) loss = 0.002 	error progress = 1.72267%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.71135%
+completion: 100% (epoch=500)(element=6266) loss = 0.005 	error progress = 1.70075%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.27%	
+#FPplusFN=2089	
+minError=206	minErrorIndex=1	globalThreshold =-1.5068606801755	
+metrics area_roc = 91.47%	
+(beta) metrics area_precision_recall = 66.35%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 219 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 297 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 26 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,547 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.67	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.58 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.71 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus175_hl1_time1524254191
+	
+$$$ hidden_units = 200	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.007 	error progress = 2.60241%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 2.35526%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.22616%
+completion: 16% (epoch=80)(element=6266) loss = 0.006 	error progress = 2.14496%
+completion: 20% (epoch=100)(element=6266) loss = 0.003 	error progress = 2.08712%
+completion: 24% (epoch=120)(element=6266) loss = 0.001 	error progress = 2.04259%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 2.00661%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.97603%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 1.94883%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.92303%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 1.90084%
+completion: 48% (epoch=240)(element=6266) loss = 0.006 	error progress = 1.87921%
+completion: 52% (epoch=260)(element=6266) loss = 0.004 	error progress = 1.8591%
+completion: 56% (epoch=280)(element=6266) loss = 0.001 	error progress = 1.83998%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.82235%
+completion: 64% (epoch=320)(element=6266) loss = 0.001 	error progress = 1.80536%
+completion: 68% (epoch=340)(element=6266) loss = 0.001 	error progress = 1.78901%
+completion: 72% (epoch=360)(element=6266) loss = 0.003 	error progress = 1.77423%
+completion: 76% (epoch=380)(element=6266) loss = 0.003 	error progress = 1.75976%
+completion: 80% (epoch=400)(element=6266) loss = 0.004 	error progress = 1.74597%
+completion: 84% (epoch=420)(element=6266) loss = 0.001 	error progress = 1.73243%
+completion: 88% (epoch=440)(element=6266) loss = 0.003 	error progress = 1.71998%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.70802%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.69644%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.68521%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 87.75%	
+#FPplusFN=2089	
+minError=223	minErrorIndex=1	globalThreshold =-1.2765953724726	
+metrics area_roc = 92.14%	
+(beta) metrics area_precision_recall = 72.14%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 228 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 288 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 28 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,545 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.65	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.56 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.69 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus200_hl1_time1524254995
+	
+$$$ hidden_units = 225	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.001 	error progress = 2.57994%
+completion: 8% (epoch=40)(element=6266) loss = 0.019 	error progress = 2.34276%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.21148%
+completion: 16% (epoch=80)(element=6266) loss = 0.004 	error progress = 2.12797%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.06666%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.0186%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 1.97945%
+completion: 32% (epoch=160)(element=6266) loss = 0.004 	error progress = 1.94607%
+completion: 36% (epoch=180)(element=6266) loss = 0.003 	error progress = 1.9162%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.88977%
+completion: 44% (epoch=220)(element=6266) loss = 0.003 	error progress = 1.86444%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.84211%
+completion: 52% (epoch=260)(element=6266) loss = 0.005 	error progress = 1.82022%
+completion: 56% (epoch=280)(element=6266) loss = 0.001 	error progress = 1.7994%
+completion: 60% (epoch=300)(element=6266) loss = 0.001 	error progress = 1.78055%
+completion: 64% (epoch=320)(element=6266) loss = 0.001 	error progress = 1.76247%
+completion: 68% (epoch=340)(element=6266) loss = 0.002 	error progress = 1.74604%
+completion: 72% (epoch=360)(element=6266) loss = 0.002 	error progress = 1.72999%
+completion: 76% (epoch=380)(element=6266) loss = 0.001 	error progress = 1.71516%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.701%
+completion: 84% (epoch=420)(element=6266) loss = 0.003 	error progress = 1.68768%
+completion: 88% (epoch=440)(element=6266) loss = 0.001 	error progress = 1.67472%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.66179%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.64982%
+completion: 100% (epoch=500)(element=6266) loss = 0.004 	error progress = 1.63808%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.51%	
+#FPplusFN=2089	
+minError=203	minErrorIndex=1	globalThreshold =-1.4542969437241	
+metrics area_roc = 91.4%	
+(beta) metrics area_precision_recall = 71.24%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 211 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 305 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 29 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,544 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.67	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.59 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.72 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus225_hl1_time1524255897
+	
+$$$ hidden_units = 250	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.004 	error progress = 2.54926%
+completion: 8% (epoch=40)(element=6266) loss = 0.002 	error progress = 2.30624%
+completion: 12% (epoch=60)(element=6266) loss = 0.003 	error progress = 2.1829%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.10613%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.05172%
+completion: 24% (epoch=120)(element=6266) loss = 0.001 	error progress = 2.00968%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 1.97451%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.94344%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 1.91534%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.8906%
+completion: 44% (epoch=220)(element=6266) loss = 0.002 	error progress = 1.86793%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.84614%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.82678%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.80788%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.79001%
+completion: 64% (epoch=320)(element=6266) loss = 0.001 	error progress = 1.77293%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.75652%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 1.74073%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.72589%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.71161%
+completion: 84% (epoch=420)(element=6266) loss = 0.001 	error progress = 1.69782%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.68499%
+completion: 92% (epoch=460)(element=6266) loss = 0.007 	error progress = 1.67297%
+completion: 96% (epoch=480)(element=6266) loss = 0.003 	error progress = 1.6612%
+completion: 100% (epoch=500)(element=6266) loss = 0.001 	error progress = 1.64971%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.99%	
+#FPplusFN=2089	
+minError=210	minErrorIndex=1	globalThreshold =-1.4823457330786	
+metrics area_roc = 91.38%	
+(beta) metrics area_precision_recall = 72.65%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 204 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 312 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 26 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,547 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.69	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.6 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.73 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus250_hl1_time1524256907
+	
+$$$ hidden_units = 275	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.001 	error progress = 2.55003%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 2.31793%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.19163%
+completion: 16% (epoch=80)(element=6266) loss = 0.001 	error progress = 2.10946%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.04876%
+completion: 24% (epoch=120)(element=6266) loss = 0.003 	error progress = 2.00165%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 1.96244%
+completion: 32% (epoch=160)(element=6266) loss = 0.001 	error progress = 1.92922%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 1.89983%
+completion: 40% (epoch=200)(element=6266) loss = 0.001 	error progress = 1.87292%
+completion: 44% (epoch=220)(element=6266) loss = 0.008 	error progress = 1.84813%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.82501%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.80361%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.78332%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.76429%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.74567%
+completion: 68% (epoch=340)(element=6266) loss = 0.002 	error progress = 1.72907%
+completion: 72% (epoch=360)(element=6266) loss = 0.003 	error progress = 1.71274%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.69744%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.68286%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.66845%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.65516%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.64187%
+completion: 96% (epoch=480)(element=6266) loss = 0.001 	error progress = 1.62934%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.61707%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.46%	
+#FPplusFN=2089	
+minError=212	minErrorIndex=1	globalThreshold =-1.9013257912033	
+metrics area_roc = 92.19%	
+(beta) metrics area_precision_recall = 71.99%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 214 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 302 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 27 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,546 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.67	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.59 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.71 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus275_hl1_time1524258055
+	
+$$$ hidden_units = 300	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.007 	error progress = 2.51455%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 2.28461%
+completion: 12% (epoch=60)(element=6266) loss = 0.002 	error progress = 2.16493%
+completion: 16% (epoch=80)(element=6266) loss = 0.008 	error progress = 2.08633%
+completion: 20% (epoch=100)(element=6266) loss = 0.002 	error progress = 2.0306%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 1.98635%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 1.94907%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.91627%
+completion: 36% (epoch=180)(element=6266) loss = 0.001 	error progress = 1.88669%
+completion: 40% (epoch=200)(element=6266) loss = 0.001 	error progress = 1.8603%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 1.83611%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 1.81319%
+completion: 52% (epoch=260)(element=6266) loss = 0.001 	error progress = 1.79191%
+completion: 56% (epoch=280)(element=6266) loss = 0.002 	error progress = 1.77175%
+completion: 60% (epoch=300)(element=6266) loss = 0.004 	error progress = 1.75294%
+completion: 64% (epoch=320)(element=6266) loss = 0.002 	error progress = 1.73502%
+completion: 68% (epoch=340)(element=6266) loss = 0.001 	error progress = 1.71786%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.70187%
+completion: 76% (epoch=380)(element=6266) loss = 0.005 	error progress = 1.68631%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 1.67139%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.65692%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.64317%
+completion: 92% (epoch=460)(element=6266) loss = 0.004 	error progress = 1.63006%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.61709%
+completion: 100% (epoch=500)(element=6266) loss = 0.001 	error progress = 1.6047%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 87.89%	
+#FPplusFN=2089	
+minError=197	minErrorIndex=1	globalThreshold =-1.5486434439574	
+metrics area_roc = 92.66%	
+(beta) metrics area_precision_recall = 72.98%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 225 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 291 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 28 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,545 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.65	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.56 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.7 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus300_hl1_time1524259309
+	
+$$$ hidden_units = 350	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.005 	error progress = 2.50936%
+completion: 8% (epoch=40)(element=6266) loss = 0.001 	error progress = 2.28348%
+completion: 12% (epoch=60)(element=6266) loss = 0.005 	error progress = 2.15981%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.08067%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.0213%
+completion: 24% (epoch=120)(element=6266) loss = 0.001 	error progress = 1.97531%
+completion: 28% (epoch=140)(element=6266) loss = 0.001 	error progress = 1.93694%
+completion: 32% (epoch=160)(element=6266) loss = 0.001 	error progress = 1.9042%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 1.87405%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.84696%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 1.82145%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 1.79779%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.77559%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.75486%
+completion: 60% (epoch=300)(element=6266) loss = 0.001 	error progress = 1.73484%
+completion: 64% (epoch=320)(element=6266) loss = 0.002 	error progress = 1.71593%
+completion: 68% (epoch=340)(element=6266) loss = 0.007 	error progress = 1.69807%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.68118%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.6646%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.64928%
+completion: 84% (epoch=420)(element=6266) loss = 0.003 	error progress = 1.63444%
+completion: 88% (epoch=440)(element=6266) loss = 0.001 	error progress = 1.62029%
+completion: 92% (epoch=460)(element=6266) loss = 0.003 	error progress = 1.60649%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.59338%
+completion: 100% (epoch=500)(element=6266) loss = 0.002 	error progress = 1.58044%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.75%	
+#FPplusFN=2089	
+minError=217	minErrorIndex=1	globalThreshold =-1.8147319776491	
+metrics area_roc = 91.8%	
+(beta) metrics area_precision_recall = 71.92%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 206 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 310 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 29 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,544 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.68	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.6 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.73 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus350_hl1_time1524260848
+	
+$$$ hidden_units = 400	 hidden_layers = 1 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.001 	error progress = 2.49544%
+completion: 8% (epoch=40)(element=6266) loss = 0.002 	error progress = 2.26548%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.14381%
+completion: 16% (epoch=80)(element=6266) loss = 0.004 	error progress = 2.06389%
+completion: 20% (epoch=100)(element=6266) loss = 0.002 	error progress = 2.0058%
+completion: 24% (epoch=120)(element=6266) loss = 0.001 	error progress = 1.95989%
+completion: 28% (epoch=140)(element=6266) loss = 0.002 	error progress = 1.92%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.88543%
+completion: 36% (epoch=180)(element=6266) loss = 0.001 	error progress = 1.85416%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.82513%
+completion: 44% (epoch=220)(element=6266) loss = 0.002 	error progress = 1.79913%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.77497%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.75181%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.7297%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.70928%
+completion: 64% (epoch=320)(element=6266) loss = 0.001 	error progress = 1.68952%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.67103%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.65322%
+completion: 76% (epoch=380)(element=6266) loss = 0.002 	error progress = 1.63639%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.62007%
+completion: 84% (epoch=420)(element=6266) loss = 0.001 	error progress = 1.60465%
+completion: 88% (epoch=440)(element=6266) loss = 0.001 	error progress = 1.58984%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.57553%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.56182%
+completion: 100% (epoch=500)(element=6266) loss = 0.003 	error progress = 1.54867%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.18%	
+#FPplusFN=2089	
+minError=203	minErrorIndex=1	globalThreshold =-1.461884861434	
+metrics area_roc = 92.21%	
+(beta) metrics area_precision_recall = 74.01%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 227 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 289 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 20 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,553 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.66	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.56 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.99 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.7 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus400_hl1_time1524262707
+	
+$$$ hidden_units = 5	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.084 	error progress = 4.84111%
+completion: 8% (epoch=40)(element=6266) loss = 0.005 	error progress = 4.7641%
+completion: 12% (epoch=60)(element=6266) loss = 0.087 	error progress = 4.72599%
+completion: 16% (epoch=80)(element=6266) loss = 0.049 	error progress = 4.7042%
+completion: 20% (epoch=100)(element=6266) loss = 0.015 	error progress = 4.68929%
+completion: 24% (epoch=120)(element=6266) loss = 0.028 	error progress = 4.67973%
+completion: 28% (epoch=140)(element=6266) loss = 0.009 	error progress = 4.67239%
+completion: 32% (epoch=160)(element=6266) loss = 0.093 	error progress = 4.66705%
+completion: 36% (epoch=180)(element=6266) loss = 0.089 	error progress = 4.66262%
+completion: 40% (epoch=200)(element=6266) loss = 0.091 	error progress = 4.65936%
+completion: 44% (epoch=220)(element=6266) loss = 0.093 	error progress = 4.6571%
+completion: 48% (epoch=240)(element=6266) loss = 0.091 	error progress = 4.65489%
+completion: 52% (epoch=260)(element=6266) loss = 0.088 	error progress = 4.65296%
+completion: 56% (epoch=280)(element=6266) loss = 0.091 	error progress = 4.65125%
+completion: 60% (epoch=300)(element=6266) loss = 0.007 	error progress = 4.64975%
+completion: 64% (epoch=320)(element=6266) loss = 0.09 	error progress = 4.64836%
+completion: 68% (epoch=340)(element=6266) loss = 0.011 	error progress = 4.64728%
+completion: 72% (epoch=360)(element=6266) loss = 0.089 	error progress = 4.64609%
+completion: 76% (epoch=380)(element=6266) loss = 0.088 	error progress = 4.6452%
+completion: 80% (epoch=400)(element=6266) loss = 0.091 	error progress = 4.64429%
+completion: 84% (epoch=420)(element=6266) loss = 0.01 	error progress = 4.64327%
+completion: 88% (epoch=440)(element=6266) loss = 0.089 	error progress = 4.64247%
+completion: 92% (epoch=460)(element=6266) loss = 0.091 	error progress = 4.64172%
+completion: 96% (epoch=480)(element=6266) loss = 0.091 	error progress = 4.64103%
+completion: 100% (epoch=500)(element=6266) loss = 0.119 	error progress = 4.64038%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 75.3%	
+ATTENTION: all the predictions are FALSE	
+#FPplusFN=2089	
+minError=516	minErrorIndex=1	globalThreshold =-1.6823374417358	
+metrics area_roc = 61.88%	
+(beta) metrics area_precision_recall = 18.03%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 516 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 0 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 0 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,573 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+Matthews correlation coefficient = NOT computable	
+accuracy = 0.75 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 1 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus5_hl2_time1524263191
+	
+$$$ hidden_units = 10	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.002 	error progress = 4.31463%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 4.06725%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 3.91979%
+completion: 16% (epoch=80)(element=6266) loss = 0.008 	error progress = 3.81421%
+completion: 20% (epoch=100)(element=6266) loss = 0.028 	error progress = 3.73699%
+completion: 24% (epoch=120)(element=6266) loss = 0.028 	error progress = 3.68136%
+completion: 28% (epoch=140)(element=6266) loss = 0.046 	error progress = 3.64052%
+completion: 32% (epoch=160)(element=6266) loss = 0.062 	error progress = 3.60818%
+completion: 36% (epoch=180)(element=6266) loss = 0.001 	error progress = 3.57975%
+completion: 40% (epoch=200)(element=6266) loss = 0.052 	error progress = 3.55603%
+completion: 44% (epoch=220)(element=6266) loss = 0.052 	error progress = 3.53707%
+completion: 48% (epoch=240)(element=6266) loss = 0.051 	error progress = 3.51933%
+completion: 52% (epoch=260)(element=6266) loss = 0.058 	error progress = 3.49956%
+completion: 56% (epoch=280)(element=6266) loss = 0.306 	error progress = 3.47828%
+completion: 60% (epoch=300)(element=6266) loss = 0.006 	error progress = 3.45777%
+completion: 64% (epoch=320)(element=6266) loss = 0.015 	error progress = 3.43503%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 3.41136%
+completion: 72% (epoch=360)(element=6266) loss = 0.002 	error progress = 3.38939%
+completion: 76% (epoch=380)(element=6266) loss = 0.011 	error progress = 3.36863%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 3.34952%
+completion: 84% (epoch=420)(element=6266) loss = 0.047 	error progress = 3.33101%
+completion: 88% (epoch=440)(element=6266) loss = 0.025 	error progress = 3.31375%
+completion: 92% (epoch=460)(element=6266) loss = 0.008 	error progress = 3.29731%
+completion: 96% (epoch=480)(element=6266) loss = 0.007 	error progress = 3.28177%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 3.26721%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 81.04%	
+#FPplusFN=2089	
+minError=271	minErrorIndex=1	globalThreshold =-1.522876971753	
+metrics area_roc = 86.37%	
+(beta) metrics area_precision_recall = 60.62%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 365 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 151 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 31 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,542 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.42	::::
+	
+accuracy = 0.81 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.29 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.43 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus10_hl2_time1524263678
+	
+$$$ hidden_units = 25	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.02 	error progress = 3.93397%
+completion: 8% (epoch=40)(element=6266) loss = 0.01 	error progress = 3.74705%
+completion: 12% (epoch=60)(element=6266) loss = 0.008 	error progress = 3.65924%
+completion: 16% (epoch=80)(element=6266) loss = 0.026 	error progress = 3.60535%
+completion: 20% (epoch=100)(element=6266) loss = 0.011 	error progress = 3.56573%
+completion: 24% (epoch=120)(element=6266) loss = 0.008 	error progress = 3.53704%
+completion: 28% (epoch=140)(element=6266) loss = 0.004 	error progress = 3.51457%
+completion: 32% (epoch=160)(element=6266) loss = 0.04 	error progress = 3.49463%
+completion: 36% (epoch=180)(element=6266) loss = 0.018 	error progress = 3.48003%
+completion: 40% (epoch=200)(element=6266) loss = 0.024 	error progress = 3.4664%
+completion: 44% (epoch=220)(element=6266) loss = 0.076 	error progress = 3.45562%
+completion: 48% (epoch=240)(element=6266) loss = 0.037 	error progress = 3.44534%
+completion: 52% (epoch=260)(element=6266) loss = 0.019 	error progress = 3.43725%
+completion: 56% (epoch=280)(element=6266) loss = 0.291 	error progress = 3.42962%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 3.42243%
+completion: 64% (epoch=320)(element=6266) loss = 0.002 	error progress = 3.41652%
+completion: 68% (epoch=340)(element=6266) loss = 0.005 	error progress = 3.41041%
+completion: 72% (epoch=360)(element=6266) loss = 0.037 	error progress = 3.40451%
+completion: 76% (epoch=380)(element=6266) loss = 0.053 	error progress = 3.39923%
+completion: 80% (epoch=400)(element=6266) loss = 0.019 	error progress = 3.394%
+completion: 84% (epoch=420)(element=6266) loss = 0.207 	error progress = 3.38946%
+completion: 88% (epoch=440)(element=6266) loss = 0.057 	error progress = 3.38516%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 3.38128%
+completion: 96% (epoch=480)(element=6266) loss = 0.005 	error progress = 3.37705%
+completion: 100% (epoch=500)(element=6266) loss = 0.065 	error progress = 3.3732%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 75.3%	
+ATTENTION: all the predictions are FALSE	
+#FPplusFN=2089	
+minError=283	minErrorIndex=1	globalThreshold =-2.2258386205117	
+metrics area_roc = 89.57%	
+(beta) metrics area_precision_recall = 60.14%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 516 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 0 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 0 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,573 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+Matthews correlation coefficient = NOT computable	
+accuracy = 0.75 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 1 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus25_hl2_time1524264184
+	
+$$$ hidden_units = 50	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.003 	error progress = 3.23435%
+completion: 8% (epoch=40)(element=6266) loss = 0.007 	error progress = 2.88531%
+completion: 12% (epoch=60)(element=6266) loss = 0.004 	error progress = 2.71876%
+completion: 16% (epoch=80)(element=6266) loss = 0.015 	error progress = 2.6157%
+completion: 20% (epoch=100)(element=6266) loss = 0.01 	error progress = 2.5421%
+completion: 24% (epoch=120)(element=6266) loss = 0.002 	error progress = 2.48744%
+completion: 28% (epoch=140)(element=6266) loss = 0.005 	error progress = 2.44216%
+completion: 32% (epoch=160)(element=6266) loss = 0.002 	error progress = 2.40635%
+completion: 36% (epoch=180)(element=6266) loss = 0.005 	error progress = 2.37581%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 2.34901%
+completion: 44% (epoch=220)(element=6266) loss = 0.001 	error progress = 2.32623%
+completion: 48% (epoch=240)(element=6266) loss = 0.004 	error progress = 2.30518%
+completion: 52% (epoch=260)(element=6266) loss = 0.01 	error progress = 2.28573%
+completion: 56% (epoch=280)(element=6266) loss = 0.001 	error progress = 2.26752%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 2.25219%
+completion: 64% (epoch=320)(element=6266) loss = 0.002 	error progress = 2.23679%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 2.22382%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 2.21138%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 2.19922%
+completion: 80% (epoch=400)(element=6266) loss = 0.004 	error progress = 2.18816%
+completion: 84% (epoch=420)(element=6266) loss = 0.007 	error progress = 2.17775%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 2.16801%
+completion: 92% (epoch=460)(element=6266) loss = 0.001 	error progress = 2.15881%
+completion: 96% (epoch=480)(element=6266) loss = 0.001 	error progress = 2.14992%
+completion: 100% (epoch=500)(element=6266) loss = 0.001 	error progress = 2.14173%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 84.54%	
+#FPplusFN=2089	
+minError=228	minErrorIndex=1	globalThreshold =-1.4119233224114	
+metrics area_roc = 91.06%	
+(beta) metrics area_precision_recall = 69.57%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 297 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 219 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 26 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,547 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.55	::::
+	
+accuracy = 0.85 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.42 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.58 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus50_hl2_time1524264751
+	
+$$$ hidden_units = 75	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.006 	error progress = 3.04818%
+completion: 8% (epoch=40)(element=6266) loss = 0.009 	error progress = 2.7151%
+completion: 12% (epoch=60)(element=6266) loss = 0.001 	error progress = 2.55083%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.43999%
+completion: 20% (epoch=100)(element=6266) loss = 0.005 	error progress = 2.35849%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.29446%
+completion: 28% (epoch=140)(element=6266) loss = 0.002 	error progress = 2.24086%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 2.19647%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 2.159%
+completion: 40% (epoch=200)(element=6266) loss = 0.004 	error progress = 2.12525%
+completion: 44% (epoch=220)(element=6266) loss = 0.01 	error progress = 2.09701%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 2.07146%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 2.04794%
+completion: 56% (epoch=280)(element=6266) loss = 0.001 	error progress = 2.02667%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 2.00755%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.98994%
+completion: 68% (epoch=340)(element=6266) loss = 0.006 	error progress = 1.97374%
+completion: 72% (epoch=360)(element=6266) loss = 0.003 	error progress = 1.959%
+completion: 76% (epoch=380)(element=6266) loss = 0.001 	error progress = 1.94499%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.9323%
+completion: 84% (epoch=420)(element=6266) loss = 0.005 	error progress = 1.92092%
+completion: 88% (epoch=440)(element=6266) loss = 0.002 	error progress = 1.90976%
+completion: 92% (epoch=460)(element=6266) loss = 0.002 	error progress = 1.89954%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.88958%
+completion: 100% (epoch=500)(element=6266) loss = 0.001 	error progress = 1.87963%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.08%	
+#FPplusFN=2089	
+minError=216	minErrorIndex=1	globalThreshold =-1.2125505178096	
+metrics area_roc = 91.86%	
+(beta) metrics area_precision_recall = 70.41%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 208 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 308 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 41 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,532 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.66	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.6 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.97 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.71 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus75_hl2_time1524265389
+	
+$$$ hidden_units = 100	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.005 	error progress = 2.95596%
+completion: 8% (epoch=40)(element=6266) loss = 0.001 	error progress = 2.62762%
+completion: 12% (epoch=60)(element=6266) loss = 0.001 	error progress = 2.46389%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.36152%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.28704%
+completion: 24% (epoch=120)(element=6266) loss = 0.006 	error progress = 2.23065%
+completion: 28% (epoch=140)(element=6266) loss = 0.001 	error progress = 2.1862%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 2.15092%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 2.11878%
+completion: 40% (epoch=200)(element=6266) loss = 0.004 	error progress = 2.09116%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 2.06685%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 2.04562%
+completion: 52% (epoch=260)(element=6266) loss = 0.001 	error progress = 2.02666%
+completion: 56% (epoch=280)(element=6266) loss = 0.002 	error progress = 2.00848%
+completion: 60% (epoch=300)(element=6266) loss = 0.001 	error progress = 1.9914%
+completion: 64% (epoch=320)(element=6266) loss = 0.001 	error progress = 1.9759%
+completion: 68% (epoch=340)(element=6266) loss = 0.004 	error progress = 1.96083%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 1.94707%
+completion: 76% (epoch=380)(element=6266) loss = 0.001 	error progress = 1.934%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.92187%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.91076%
+completion: 88% (epoch=440)(element=6266) loss = 0.003 	error progress = 1.89964%
+completion: 92% (epoch=460)(element=6266) loss = 0.002 	error progress = 1.88856%
+completion: 96% (epoch=480)(element=6266) loss = 0.006 	error progress = 1.87851%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.86869%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 87.98%	
+#FPplusFN=2089	
+minError=211	minErrorIndex=1	globalThreshold =-1.2565502413881	
+metrics area_roc = 92.35%	
+(beta) metrics area_precision_recall = 72.93%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 228 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 288 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 23 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,550 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.66	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.56 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.99 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.7 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus100_hl2_time1524266121
+	
+$$$ hidden_units = 125	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.009 	error progress = 2.81383%
+completion: 8% (epoch=40)(element=6266) loss = 0.007 	error progress = 2.52908%
+completion: 12% (epoch=60)(element=6266) loss = 0.004 	error progress = 2.37993%
+completion: 16% (epoch=80)(element=6266) loss = 0.005 	error progress = 2.27858%
+completion: 20% (epoch=100)(element=6266) loss = 0.011 	error progress = 2.20575%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.14962%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 2.10236%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 2.06206%
+completion: 36% (epoch=180)(element=6266) loss = 0.001 	error progress = 2.02786%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.99856%
+completion: 44% (epoch=220)(element=6266) loss = 0.001 	error progress = 1.97248%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 1.94841%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.92652%
+completion: 56% (epoch=280)(element=6266) loss = 0.002 	error progress = 1.90776%
+completion: 60% (epoch=300)(element=6266) loss = 0.002 	error progress = 1.88975%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.87253%
+completion: 68% (epoch=340)(element=6266) loss = 0.001 	error progress = 1.85679%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 1.84265%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.82988%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 1.81756%
+completion: 84% (epoch=420)(element=6266) loss = 0.002 	error progress = 1.80578%
+completion: 88% (epoch=440)(element=6266) loss = 0.001 	error progress = 1.79454%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.78417%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.77355%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.7635%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.51%	
+#FPplusFN=2089	
+minError=223	minErrorIndex=1	globalThreshold =-1.2060606003264	
+metrics area_roc = 91.44%	
+(beta) metrics area_precision_recall = 72.59%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 212 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 304 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 28 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,545 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.67	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.59 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.72 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus125_hl2_time1524266963
+	
+$$$ hidden_units = 150	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.001 	error progress = 2.80473%
+completion: 8% (epoch=40)(element=6266) loss = 0.002 	error progress = 2.49675%
+completion: 12% (epoch=60)(element=6266) loss = 0.004 	error progress = 2.34088%
+completion: 16% (epoch=80)(element=6266) loss = 0.003 	error progress = 2.23953%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.16697%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.11064%
+completion: 28% (epoch=140)(element=6266) loss = 0.005 	error progress = 2.06386%
+completion: 32% (epoch=160)(element=6266) loss = 0.001 	error progress = 2.0246%
+completion: 36% (epoch=180)(element=6266) loss = 0.001 	error progress = 1.99096%
+completion: 40% (epoch=200)(element=6266) loss = 0.003 	error progress = 1.96285%
+completion: 44% (epoch=220)(element=6266) loss = 0.001 	error progress = 1.93687%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 1.91278%
+completion: 52% (epoch=260)(element=6266) loss = 0.002 	error progress = 1.89126%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.87124%
+completion: 60% (epoch=300)(element=6266) loss = 0.001 	error progress = 1.85211%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.83437%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.81772%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 1.80291%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.78928%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.77603%
+completion: 84% (epoch=420)(element=6266) loss = 0.002 	error progress = 1.76338%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.75129%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.73969%
+completion: 96% (epoch=480)(element=6266) loss = 0.007 	error progress = 1.72875%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.71812%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 87.75%	
+#FPplusFN=2089	
+minError=216	minErrorIndex=1	globalThreshold =-1.1764662574453	
+metrics area_roc = 92.61%	
+(beta) metrics area_precision_recall = 70.01%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 218 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 298 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 38 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,535 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.65	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.58 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.7 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus150_hl2_time1524267927
+	
+$$$ hidden_units = 175	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0 	error progress = 2.72452%
+completion: 8% (epoch=40)(element=6266) loss = 0.003 	error progress = 2.43033%
+completion: 12% (epoch=60)(element=6266) loss = 0.001 	error progress = 2.28103%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.18248%
+completion: 20% (epoch=100)(element=6266) loss = 0.002 	error progress = 2.111%
+completion: 24% (epoch=120)(element=6266) loss = 0.003 	error progress = 2.05622%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 2.01233%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.97321%
+completion: 36% (epoch=180)(element=6266) loss = 0.003 	error progress = 1.94208%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.91299%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 1.88745%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 1.86503%
+completion: 52% (epoch=260)(element=6266) loss = 0.002 	error progress = 1.84335%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.82436%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.80595%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.78885%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.77352%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.75928%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.74598%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.7331%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.72045%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.70857%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.6971%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.68648%
+completion: 100% (epoch=500)(element=6266) loss = 0.001 	error progress = 1.67547%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 89.28%	
+#FPplusFN=2089	
+minError=209	minErrorIndex=1	globalThreshold =-1.1768413057723	
+metrics area_roc = 92.43%	
+(beta) metrics area_precision_recall = 71.26%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 184 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 332 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 40 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,533 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.7	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.64 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.97 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.75 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus175_hl2_time1524269026
+	
+$$$ hidden_units = 200	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0 	error progress = 2.68752%
+completion: 8% (epoch=40)(element=6266) loss = 0.001 	error progress = 2.39655%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.2526%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.15942%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.08927%
+completion: 24% (epoch=120)(element=6266) loss = 0.001 	error progress = 2.03457%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 1.9899%
+completion: 32% (epoch=160)(element=6266) loss = 0.001 	error progress = 1.95119%
+completion: 36% (epoch=180)(element=6266) loss = 0.001 	error progress = 1.91822%
+completion: 40% (epoch=200)(element=6266) loss = 0.002 	error progress = 1.88927%
+completion: 44% (epoch=220)(element=6266) loss = 0.002 	error progress = 1.86317%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.8396%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.81655%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.79611%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.77843%
+completion: 64% (epoch=320)(element=6266) loss = 0.002 	error progress = 1.76024%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.7437%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.72853%
+completion: 76% (epoch=380)(element=6266) loss = 0.002 	error progress = 1.71357%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 1.69987%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.68715%
+completion: 88% (epoch=440)(element=6266) loss = 0.002 	error progress = 1.67473%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.66268%
+completion: 96% (epoch=480)(element=6266) loss = 0.001 	error progress = 1.65073%
+completion: 100% (epoch=500)(element=6266) loss = 0.001 	error progress = 1.6399%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.22%	
+#FPplusFN=2089	
+minError=222	minErrorIndex=1	globalThreshold =-1.1266439173219	
+metrics area_roc = 92.74%	
+(beta) metrics area_precision_recall = 72.41%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 208 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 308 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 38 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,535 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.66	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.6 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.71 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus200_hl2_time1524270300
+	
+$$$ hidden_units = 225	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.001 	error progress = 2.64311%
+completion: 8% (epoch=40)(element=6266) loss = 0.005 	error progress = 2.36488%
+completion: 12% (epoch=60)(element=6266) loss = 0.005 	error progress = 2.22182%
+completion: 16% (epoch=80)(element=6266) loss = 0.004 	error progress = 2.12585%
+completion: 20% (epoch=100)(element=6266) loss = 0.001 	error progress = 2.05592%
+completion: 24% (epoch=120)(element=6266) loss = 0.001 	error progress = 2.00063%
+completion: 28% (epoch=140)(element=6266) loss = 0.008 	error progress = 1.95683%
+completion: 32% (epoch=160)(element=6266) loss = 0.002 	error progress = 1.91822%
+completion: 36% (epoch=180)(element=6266) loss = 0.001 	error progress = 1.88406%
+completion: 40% (epoch=200)(element=6266) loss = 0.002 	error progress = 1.85377%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 1.8274%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.80332%
+completion: 52% (epoch=260)(element=6266) loss = 0.002 	error progress = 1.78094%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.76096%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.74214%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.72487%
+completion: 68% (epoch=340)(element=6266) loss = 0.001 	error progress = 1.70849%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 1.69278%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.67816%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.66423%
+completion: 84% (epoch=420)(element=6266) loss = 0.002 	error progress = 1.65091%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.63827%
+completion: 92% (epoch=460)(element=6266) loss = 0.001 	error progress = 1.6267%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.61554%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.60454%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.85%	
+#FPplusFN=2089	
+minError=216	minErrorIndex=1	globalThreshold =-1.2072169148161	
+metrics area_roc = 92.67%	
+(beta) metrics area_precision_recall = 73.74%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 194 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 322 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 39 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,534 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.68	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.62 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.73 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus225_hl2_time1524271738
+	
+$$$ hidden_units = 250	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.005 	error progress = 2.63625%
+completion: 8% (epoch=40)(element=6266) loss = 0.002 	error progress = 2.36541%
+completion: 12% (epoch=60)(element=6266) loss = 0.006 	error progress = 2.22377%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.12703%
+completion: 20% (epoch=100)(element=6266) loss = 0.002 	error progress = 2.05664%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.00028%
+completion: 28% (epoch=140)(element=6266) loss = 0.005 	error progress = 1.95338%
+completion: 32% (epoch=160)(element=6266) loss = 0.001 	error progress = 1.91318%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 1.87885%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.84782%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 1.82014%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.7942%
+completion: 52% (epoch=260)(element=6266) loss = 0.001 	error progress = 1.77057%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.74916%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.72825%
+completion: 64% (epoch=320)(element=6266) loss = 0.004 	error progress = 1.7087%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.69011%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.67283%
+completion: 76% (epoch=380)(element=6266) loss = 0.001 	error progress = 1.65748%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 1.64171%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.62709%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.61283%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.59964%
+completion: 96% (epoch=480)(element=6266) loss = 0.002 	error progress = 1.5871%
+completion: 100% (epoch=500)(element=6266) loss = 0.002 	error progress = 1.57491%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 89.28%	
+#FPplusFN=2089	
+minError=214	minErrorIndex=1	globalThreshold =-1.1519594814957	
+metrics area_roc = 91.87%	
+(beta) metrics area_precision_recall = 71.76%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 178 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 338 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 46 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,527 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.7	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.66 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.97 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.75 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus250_hl2_time1524273383
+	
+$$$ hidden_units = 275	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0 	error progress = 2.61719%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 2.33594%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.19063%
+completion: 16% (epoch=80)(element=6266) loss = 0.001 	error progress = 2.09551%
+completion: 20% (epoch=100)(element=6266) loss = 0.001 	error progress = 2.02199%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 1.96503%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 1.91772%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.87812%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 1.84355%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.81344%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 1.78634%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.76048%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.73766%
+completion: 56% (epoch=280)(element=6266) loss = 0.002 	error progress = 1.71794%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.6993%
+completion: 64% (epoch=320)(element=6266) loss = 0.001 	error progress = 1.68201%
+completion: 68% (epoch=340)(element=6266) loss = 0.001 	error progress = 1.66565%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.64958%
+completion: 76% (epoch=380)(element=6266) loss = 0.001 	error progress = 1.63517%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.62089%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.60725%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.59467%
+completion: 92% (epoch=460)(element=6266) loss = 0.001 	error progress = 1.5827%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.57112%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.5605%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 89.37%	
+#FPplusFN=2089	
+minError=208	minErrorIndex=1	globalThreshold =-1.1477027335654	
+metrics area_roc = 92.75%	
+(beta) metrics area_precision_recall = 71.79%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 188 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 328 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 34 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,539 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.7	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.64 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.75 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus275_hl2_time1524275247
+	
+$$$ hidden_units = 300	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.002 	error progress = 2.597%
+completion: 8% (epoch=40)(element=6266) loss = 0.005 	error progress = 2.33007%
+completion: 12% (epoch=60)(element=6266) loss = 0.001 	error progress = 2.19559%
+completion: 16% (epoch=80)(element=6266) loss = 0.004 	error progress = 2.10423%
+completion: 20% (epoch=100)(element=6266) loss = 0.002 	error progress = 2.03485%
+completion: 24% (epoch=120)(element=6266) loss = 0.002 	error progress = 1.97935%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 1.93287%
+completion: 32% (epoch=160)(element=6266) loss = 0.003 	error progress = 1.89289%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 1.85868%
+completion: 40% (epoch=200)(element=6266) loss = 0.008 	error progress = 1.82795%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 1.80026%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 1.77473%
+completion: 52% (epoch=260)(element=6266) loss = 0.001 	error progress = 1.75068%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.72904%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.70891%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.68983%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.67247%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.65536%
+completion: 76% (epoch=380)(element=6266) loss = 0.002 	error progress = 1.63967%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 1.62425%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.61005%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.59629%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.58294%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.57007%
+completion: 100% (epoch=500)(element=6266) loss = 0.002 	error progress = 1.55796%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.85%	
+#FPplusFN=2089	
+minError=218	minErrorIndex=1	globalThreshold =-1.1520646547974	
+metrics area_roc = 92.41%	
+(beta) metrics area_precision_recall = 70.32%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 191 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 325 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 42 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,531 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.68	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.63 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.97 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.74 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus300_hl2_time1524277375
+	
+$$$ hidden_units = 350	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.001 	error progress = 2.55961%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 2.29961%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.16328%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.06859%
+completion: 20% (epoch=100)(element=6266) loss = 0.002 	error progress = 1.99554%
+completion: 24% (epoch=120)(element=6266) loss = 0.01 	error progress = 1.93751%
+completion: 28% (epoch=140)(element=6266) loss = 0.001 	error progress = 1.89118%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.85252%
+completion: 36% (epoch=180)(element=6266) loss = 0.003 	error progress = 1.81642%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.78506%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 1.75673%
+completion: 48% (epoch=240)(element=6266) loss = 0.005 	error progress = 1.73009%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.70635%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.68464%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.66403%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.64532%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.62714%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 1.61009%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.5941%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.57917%
+completion: 84% (epoch=420)(element=6266) loss = 0.001 	error progress = 1.56403%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.54994%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.53576%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.52248%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.50966%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 89.04%	
+#FPplusFN=2089	
+minError=209	minErrorIndex=1	globalThreshold =-1.1840371273074	
+metrics area_roc = 92.76%	
+(beta) metrics area_precision_recall = 72.83%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 196 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 320 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 33 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,540 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.69	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.62 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.74 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus350_hl2_time1524279994
+	
+$$$ hidden_units = 400	 hidden_layers = 2 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0 	error progress = 2.56691%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 2.30396%
+completion: 12% (epoch=60)(element=6266) loss = 0.004 	error progress = 2.16692%
+completion: 16% (epoch=80)(element=6266) loss = 0.001 	error progress = 2.07251%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 1.99966%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 1.94168%
+completion: 28% (epoch=140)(element=6266) loss = 0.002 	error progress = 1.89415%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.85242%
+completion: 36% (epoch=180)(element=6266) loss = 0.001 	error progress = 1.81595%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.78368%
+completion: 44% (epoch=220)(element=6266) loss = 0.004 	error progress = 1.75452%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.72779%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.70382%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.68149%
+completion: 60% (epoch=300)(element=6266) loss = 0.002 	error progress = 1.66014%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.64065%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.62211%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.60445%
+completion: 76% (epoch=380)(element=6266) loss = 0.002 	error progress = 1.5874%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 1.57159%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.55639%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.54223%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.52812%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.51458%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.50172%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.37%	
+#FPplusFN=2089	
+minError=213	minErrorIndex=1	globalThreshold =-1.1076892736026	
+metrics area_roc = 92.56%	
+(beta) metrics area_precision_recall = 71.09%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 195 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 321 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 48 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,525 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.67	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.62 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.97 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.73 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus400_hl2_time1524283204
+	
+$$$ hidden_units = 5	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.058 	error progress = 4.74717%
+completion: 8% (epoch=40)(element=6266) loss = 0.049 	error progress = 4.6547%
+completion: 12% (epoch=60)(element=6266) loss = 0.044 	error progress = 4.58411%
+completion: 16% (epoch=80)(element=6266) loss = 0.042 	error progress = 4.53548%
+completion: 20% (epoch=100)(element=6266) loss = 0.043 	error progress = 4.50334%
+completion: 24% (epoch=120)(element=6266) loss = 0.042 	error progress = 4.47875%
+completion: 28% (epoch=140)(element=6266) loss = 0.041 	error progress = 4.46066%
+completion: 32% (epoch=160)(element=6266) loss = 0.042 	error progress = 4.44167%
+completion: 36% (epoch=180)(element=6266) loss = 0.045 	error progress = 4.4238%
+completion: 40% (epoch=200)(element=6266) loss = 0.043 	error progress = 4.40871%
+completion: 44% (epoch=220)(element=6266) loss = 0.038 	error progress = 4.39578%
+completion: 48% (epoch=240)(element=6266) loss = 0.074 	error progress = 4.38054%
+completion: 52% (epoch=260)(element=6266) loss = 0.037 	error progress = 4.36713%
+completion: 56% (epoch=280)(element=6266) loss = 0.039 	error progress = 4.35607%
+completion: 60% (epoch=300)(element=6266) loss = 0.036 	error progress = 4.34515%
+completion: 64% (epoch=320)(element=6266) loss = 0.034 	error progress = 4.33422%
+completion: 68% (epoch=340)(element=6266) loss = 0.035 	error progress = 4.32435%
+completion: 72% (epoch=360)(element=6266) loss = 0.085 	error progress = 4.3155%
+completion: 76% (epoch=380)(element=6266) loss = 0.041 	error progress = 4.30776%
+completion: 80% (epoch=400)(element=6266) loss = 0.035 	error progress = 4.30058%
+completion: 84% (epoch=420)(element=6266) loss = 0.034 	error progress = 4.29399%
+completion: 88% (epoch=440)(element=6266) loss = 0.035 	error progress = 4.28794%
+completion: 92% (epoch=460)(element=6266) loss = 0.037 	error progress = 4.2819%
+completion: 96% (epoch=480)(element=6266) loss = 0.04 	error progress = 4.27722%
+completion: 100% (epoch=500)(element=6266) loss = 0.07 	error progress = 4.27234%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 76.4%	
+#FPplusFN=2089	
+minError=426	minErrorIndex=1	globalThreshold =-0.62395108764109	
+metrics area_roc = 67.36%	
+(beta) metrics area_precision_recall = 37.89%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 484 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 32 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 9 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,564 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.18	::::
+	
+accuracy = 0.76 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.06 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.99 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.11 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus5_hl3_time1524283807
+	
+$$$ hidden_units = 10	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.028 	error progress = 4.64258%
+completion: 8% (epoch=40)(element=6266) loss = 0.118 	error progress = 4.52906%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 4.46754%
+completion: 16% (epoch=80)(element=6266) loss = 0.004 	error progress = 4.42961%
+completion: 20% (epoch=100)(element=6266) loss = 0.133 	error progress = 4.40109%
+completion: 24% (epoch=120)(element=6266) loss = 0.001 	error progress = 4.38093%
+completion: 28% (epoch=140)(element=6266) loss = 0.068 	error progress = 4.36509%
+completion: 32% (epoch=160)(element=6266) loss = 0.001 	error progress = 4.35158%
+completion: 36% (epoch=180)(element=6266) loss = 0.013 	error progress = 4.34114%
+completion: 40% (epoch=200)(element=6266) loss = 0.066 	error progress = 4.33157%
+completion: 44% (epoch=220)(element=6266) loss = 0.137 	error progress = 4.32312%
+completion: 48% (epoch=240)(element=6266) loss = 0.01 	error progress = 4.31429%
+completion: 52% (epoch=260)(element=6266) loss = 0.432 	error progress = 4.3041%
+completion: 56% (epoch=280)(element=6266) loss = 0.002 	error progress = 4.2941%
+completion: 60% (epoch=300)(element=6266) loss = 0.103 	error progress = 4.28412%
+completion: 64% (epoch=320)(element=6266) loss = 0.004 	error progress = 4.27357%
+completion: 68% (epoch=340)(element=6266) loss = 0.07 	error progress = 4.26485%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 4.2572%
+completion: 76% (epoch=380)(element=6266) loss = 0.098 	error progress = 4.24978%
+completion: 80% (epoch=400)(element=6266) loss = 0.008 	error progress = 4.24266%
+completion: 84% (epoch=420)(element=6266) loss = 0.01 	error progress = 4.23614%
+completion: 88% (epoch=440)(element=6266) loss = 0.054 	error progress = 4.23011%
+completion: 92% (epoch=460)(element=6266) loss = 0.058 	error progress = 4.22452%
+completion: 96% (epoch=480)(element=6266) loss = 0.213 	error progress = 4.21911%
+completion: 100% (epoch=500)(element=6266) loss = 0.034 	error progress = 4.21406%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 75.3%	
+ATTENTION: all the predictions are FALSE	
+#FPplusFN=2089	
+minError=481	minErrorIndex=1	globalThreshold =-2.4316772475127	
+metrics area_roc = 79.92%	
+(beta) metrics area_precision_recall = 37.64%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 516 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 0 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 0 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,573 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+Matthews correlation coefficient = NOT computable	
+accuracy = 0.75 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 1 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus10_hl3_time1524284411
+	
+$$$ hidden_units = 25	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.053 	error progress = 3.53949%
+completion: 8% (epoch=40)(element=6266) loss = 0.006 	error progress = 3.22767%
+completion: 12% (epoch=60)(element=6266) loss = 0.061 	error progress = 3.09693%
+completion: 16% (epoch=80)(element=6266) loss = 0.026 	error progress = 3.0153%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.96208%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.92059%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 2.88869%
+completion: 32% (epoch=160)(element=6266) loss = 0.06 	error progress = 2.86044%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 2.83654%
+completion: 40% (epoch=200)(element=6266) loss = 0.003 	error progress = 2.81573%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 2.79486%
+completion: 48% (epoch=240)(element=6266) loss = 0.028 	error progress = 2.77674%
+completion: 52% (epoch=260)(element=6266) loss = 0.005 	error progress = 2.75815%
+completion: 56% (epoch=280)(element=6266) loss = 0.021 	error progress = 2.74185%
+completion: 60% (epoch=300)(element=6266) loss = 0.028 	error progress = 2.72809%
+completion: 64% (epoch=320)(element=6266) loss = 0.051 	error progress = 2.71539%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 2.70311%
+completion: 72% (epoch=360)(element=6266) loss = 0.026 	error progress = 2.69179%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 2.68146%
+completion: 80% (epoch=400)(element=6266) loss = 0.005 	error progress = 2.67264%
+completion: 84% (epoch=420)(element=6266) loss = 0.011 	error progress = 2.66368%
+completion: 88% (epoch=440)(element=6266) loss = 0.006 	error progress = 2.65511%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 2.64729%
+completion: 96% (epoch=480)(element=6266) loss = 0.05 	error progress = 2.6399%
+completion: 100% (epoch=500)(element=6266) loss = 0.052 	error progress = 2.63294%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 82.34%	
+#FPplusFN=2089	
+minError=256	minErrorIndex=1	globalThreshold =-1.3724727483146	
+metrics area_roc = 89.44%	
+(beta) metrics area_precision_recall = 67.18%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 361 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 155 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 8 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,565 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.47	::::
+	
+accuracy = 0.82 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.3 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.99 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.46 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus25_hl3_time1524285047
+	
+$$$ hidden_units = 50	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.03 	error progress = 3.60602%
+completion: 8% (epoch=40)(element=6266) loss = 0.007 	error progress = 3.24803%
+completion: 12% (epoch=60)(element=6266) loss = 0.01 	error progress = 3.10212%
+completion: 16% (epoch=80)(element=6266) loss = 0.032 	error progress = 3.01153%
+completion: 20% (epoch=100)(element=6266) loss = 0.064 	error progress = 2.95121%
+completion: 24% (epoch=120)(element=6266) loss = 0.016 	error progress = 2.90714%
+completion: 28% (epoch=140)(element=6266) loss = 0.028 	error progress = 2.87323%
+completion: 32% (epoch=160)(element=6266) loss = 0.009 	error progress = 2.84308%
+completion: 36% (epoch=180)(element=6266) loss = 0.016 	error progress = 2.81739%
+completion: 40% (epoch=200)(element=6266) loss = 0.042 	error progress = 2.79525%
+completion: 44% (epoch=220)(element=6266) loss = 0.033 	error progress = 2.77446%
+completion: 48% (epoch=240)(element=6266) loss = 0.052 	error progress = 2.75693%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 2.74032%
+completion: 56% (epoch=280)(element=6266) loss = 0.001 	error progress = 2.7266%
+completion: 60% (epoch=300)(element=6266) loss = 0.012 	error progress = 2.71299%
+completion: 64% (epoch=320)(element=6266) loss = 0.004 	error progress = 2.70043%
+completion: 68% (epoch=340)(element=6266) loss = 0.004 	error progress = 2.68866%
+completion: 72% (epoch=360)(element=6266) loss = 0.015 	error progress = 2.67864%
+completion: 76% (epoch=380)(element=6266) loss = 0.028 	error progress = 2.66902%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 2.65952%
+completion: 84% (epoch=420)(element=6266) loss = 0.017 	error progress = 2.65151%
+completion: 88% (epoch=440)(element=6266) loss = 0.005 	error progress = 2.64308%
+completion: 92% (epoch=460)(element=6266) loss = 0.041 	error progress = 2.63561%
+completion: 96% (epoch=480)(element=6266) loss = 0.026 	error progress = 2.62825%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 2.62075%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 81.52%	
+#FPplusFN=2089	
+minError=244	minErrorIndex=1	globalThreshold =-2.1990999924815	
+metrics area_roc = 90.43%	
+(beta) metrics area_precision_recall = 65.26%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 367 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 149 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 19 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,554 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.44	::::
+	
+accuracy = 0.82 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.29 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.99 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.44 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus50_hl3_time1524285766
+	
+$$$ hidden_units = 75	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.03 	error progress = 3.18832%
+completion: 8% (epoch=40)(element=6266) loss = 0.003 	error progress = 2.83667%
+completion: 12% (epoch=60)(element=6266) loss = 0.012 	error progress = 2.68309%
+completion: 16% (epoch=80)(element=6266) loss = 0.006 	error progress = 2.59363%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.53149%
+completion: 24% (epoch=120)(element=6266) loss = 0.017 	error progress = 2.48625%
+completion: 28% (epoch=140)(element=6266) loss = 0.011 	error progress = 2.4506%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 2.42106%
+completion: 36% (epoch=180)(element=6266) loss = 0.007 	error progress = 2.39557%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 2.3738%
+completion: 44% (epoch=220)(element=6266) loss = 0.006 	error progress = 2.35583%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 2.34005%
+completion: 52% (epoch=260)(element=6266) loss = 0.009 	error progress = 2.3243%
+completion: 56% (epoch=280)(element=6266) loss = 0.003 	error progress = 2.31092%
+completion: 60% (epoch=300)(element=6266) loss = 0.004 	error progress = 2.29787%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 2.28659%
+completion: 68% (epoch=340)(element=6266) loss = 0.007 	error progress = 2.27619%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 2.26649%
+completion: 76% (epoch=380)(element=6266) loss = 0.002 	error progress = 2.25752%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 2.24883%
+completion: 84% (epoch=420)(element=6266) loss = 0.006 	error progress = 2.24075%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 2.23315%
+completion: 92% (epoch=460)(element=6266) loss = 0.002 	error progress = 2.22611%
+completion: 96% (epoch=480)(element=6266) loss = 0.003 	error progress = 2.21879%
+completion: 100% (epoch=500)(element=6266) loss = 0.003 	error progress = 2.21245%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 84.25%	
+#FPplusFN=2089	
+minError=247	minErrorIndex=1	globalThreshold =-1.4781939506393	
+metrics area_roc = 90.99%	
+(beta) metrics area_precision_recall = 66.32%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 278 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 238 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 51 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,522 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.54	::::
+	
+accuracy = 0.84 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.46 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.97 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.59 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus75_hl3_time1524286577
+	
+$$$ hidden_units = 100	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.007 	error progress = 3.1222%
+completion: 8% (epoch=40)(element=6266) loss = 0.002 	error progress = 2.74548%
+completion: 12% (epoch=60)(element=6266) loss = 0.002 	error progress = 2.56209%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.44776%
+completion: 20% (epoch=100)(element=6266) loss = 0.002 	error progress = 2.36586%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.30471%
+completion: 28% (epoch=140)(element=6266) loss = 0.001 	error progress = 2.25756%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 2.217%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 2.18387%
+completion: 40% (epoch=200)(element=6266) loss = 0.002 	error progress = 2.15465%
+completion: 44% (epoch=220)(element=6266) loss = 0.001 	error progress = 2.12843%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 2.10536%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 2.08315%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 2.06309%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 2.04554%
+completion: 64% (epoch=320)(element=6266) loss = 0.001 	error progress = 2.03017%
+completion: 68% (epoch=340)(element=6266) loss = 0.002 	error progress = 2.01586%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 2.00162%
+completion: 76% (epoch=380)(element=6266) loss = 0.001 	error progress = 1.9888%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.97623%
+completion: 84% (epoch=420)(element=6266) loss = 0.008 	error progress = 1.96467%
+completion: 88% (epoch=440)(element=6266) loss = 0.001 	error progress = 1.95427%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.94362%
+completion: 96% (epoch=480)(element=6266) loss = 0.002 	error progress = 1.9337%
+completion: 100% (epoch=500)(element=6266) loss = 0.002 	error progress = 1.92427%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 86.5%	
+#FPplusFN=2089	
+minError=228	minErrorIndex=1	globalThreshold =-1.294686489058	
+metrics area_roc = 92.32%	
+(beta) metrics area_precision_recall = 71.92%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 257 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 259 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 25 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,548 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.61	::::
+	
+accuracy = 0.87 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.5 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.65 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus100_hl3_time1524287510
+	
+$$$ hidden_units = 125	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0 	error progress = 3.06914%
+completion: 8% (epoch=40)(element=6266) loss = 0.002 	error progress = 2.68739%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.50859%
+completion: 16% (epoch=80)(element=6266) loss = 0.006 	error progress = 2.39972%
+completion: 20% (epoch=100)(element=6266) loss = 0.008 	error progress = 2.32457%
+completion: 24% (epoch=120)(element=6266) loss = 0.001 	error progress = 2.26627%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 2.21799%
+completion: 32% (epoch=160)(element=6266) loss = 0.001 	error progress = 2.17937%
+completion: 36% (epoch=180)(element=6266) loss = 0.017 	error progress = 2.14426%
+completion: 40% (epoch=200)(element=6266) loss = 0.001 	error progress = 2.11476%
+completion: 44% (epoch=220)(element=6266) loss = 0.002 	error progress = 2.08827%
+completion: 48% (epoch=240)(element=6266) loss = 0.002 	error progress = 2.06545%
+completion: 52% (epoch=260)(element=6266) loss = 0.001 	error progress = 2.04291%
+completion: 56% (epoch=280)(element=6266) loss = 0.005 	error progress = 2.02295%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 2.0049%
+completion: 64% (epoch=320)(element=6266) loss = 0.002 	error progress = 1.98798%
+completion: 68% (epoch=340)(element=6266) loss = 0.001 	error progress = 1.97315%
+completion: 72% (epoch=360)(element=6266) loss = 0.006 	error progress = 1.95904%
+completion: 76% (epoch=380)(element=6266) loss = 0.008 	error progress = 1.94494%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.93196%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.92011%
+completion: 88% (epoch=440)(element=6266) loss = 0.006 	error progress = 1.90864%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.89762%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.8873%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.87709%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 86.26%	
+#FPplusFN=2089	
+minError=223	minErrorIndex=1	globalThreshold =-1.242352418217	
+metrics area_roc = 92.04%	
+(beta) metrics area_precision_recall = 70.09%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 252 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 264 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 35 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,538 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.6	::::
+	
+accuracy = 0.86 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.51 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.65 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus125_hl3_time1524288607
+	
+$$$ hidden_units = 150	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.009 	error progress = 3.00807%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 2.64015%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.47244%
+completion: 16% (epoch=80)(element=6266) loss = 0.001 	error progress = 2.37022%
+completion: 20% (epoch=100)(element=6266) loss = 0.006 	error progress = 2.29969%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.24406%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 2.20066%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 2.16311%
+completion: 36% (epoch=180)(element=6266) loss = 0.002 	error progress = 2.13108%
+completion: 40% (epoch=200)(element=6266) loss = 0.005 	error progress = 2.10321%
+completion: 44% (epoch=220)(element=6266) loss = 0.003 	error progress = 2.07783%
+completion: 48% (epoch=240)(element=6266) loss = 0.002 	error progress = 2.05609%
+completion: 52% (epoch=260)(element=6266) loss = 0.002 	error progress = 2.03554%
+completion: 56% (epoch=280)(element=6266) loss = 0.003 	error progress = 2.01602%
+completion: 60% (epoch=300)(element=6266) loss = 0.001 	error progress = 1.99833%
+completion: 64% (epoch=320)(element=6266) loss = 0.006 	error progress = 1.98184%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.96733%
+completion: 72% (epoch=360)(element=6266) loss = 0.003 	error progress = 1.95303%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.9401%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.9266%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.91458%
+completion: 88% (epoch=440)(element=6266) loss = 0.001 	error progress = 1.90323%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.89243%
+completion: 96% (epoch=480)(element=6266) loss = 0.006 	error progress = 1.8821%
+completion: 100% (epoch=500)(element=6266) loss = 0.026 	error progress = 1.87219%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 86.69%	
+#FPplusFN=2089	
+minError=213	minErrorIndex=1	globalThreshold =-1.3828895882979	
+metrics area_roc = 92.32%	
+(beta) metrics area_precision_recall = 70.81%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 253 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 263 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 25 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,548 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.62	::::
+	
+accuracy = 0.87 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.51 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.65 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus150_hl3_time1524289899
+	
+$$$ hidden_units = 175	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0 	error progress = 2.81947%
+completion: 8% (epoch=40)(element=6266) loss = 0.002 	error progress = 2.50537%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.35388%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.25817%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.18873%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.13449%
+completion: 28% (epoch=140)(element=6266) loss = 0.004 	error progress = 2.09157%
+completion: 32% (epoch=160)(element=6266) loss = 0.001 	error progress = 2.05461%
+completion: 36% (epoch=180)(element=6266) loss = 0.002 	error progress = 2.02184%
+completion: 40% (epoch=200)(element=6266) loss = 0.001 	error progress = 1.99236%
+completion: 44% (epoch=220)(element=6266) loss = 0.002 	error progress = 1.96628%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 1.94215%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.92028%
+completion: 56% (epoch=280)(element=6266) loss = 0.002 	error progress = 1.89994%
+completion: 60% (epoch=300)(element=6266) loss = 0.001 	error progress = 1.88044%
+completion: 64% (epoch=320)(element=6266) loss = 0.001 	error progress = 1.86307%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.84627%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 1.83128%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.81769%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.80394%
+completion: 84% (epoch=420)(element=6266) loss = 0.001 	error progress = 1.79051%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.77767%
+completion: 92% (epoch=460)(element=6266) loss = 0.001 	error progress = 1.76571%
+completion: 96% (epoch=480)(element=6266) loss = 0.002 	error progress = 1.7546%
+completion: 100% (epoch=500)(element=6266) loss = 0.001 	error progress = 1.74389%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 87.94%	
+#FPplusFN=2089	
+minError=221	minErrorIndex=1	globalThreshold =-1.1918300938289	
+metrics area_roc = 91.71%	
+(beta) metrics area_precision_recall = 70.76%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 209 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 307 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 43 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,530 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.66	::::
+	
+accuracy = 0.88 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.59 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.97 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.71 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus175_hl3_time1524291394
+	
+$$$ hidden_units = 200	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.01 	error progress = 2.79608%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 2.47003%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.30311%
+completion: 16% (epoch=80)(element=6266) loss = 0.007 	error progress = 2.19763%
+completion: 20% (epoch=100)(element=6266) loss = 0.015 	error progress = 2.12131%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.06149%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 2.01032%
+completion: 32% (epoch=160)(element=6266) loss = 0.001 	error progress = 1.96835%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 1.93341%
+completion: 40% (epoch=200)(element=6266) loss = 0.003 	error progress = 1.90175%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 1.87296%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 1.84787%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.82478%
+completion: 56% (epoch=280)(element=6266) loss = 0.002 	error progress = 1.80362%
+completion: 60% (epoch=300)(element=6266) loss = 0.001 	error progress = 1.78464%
+completion: 64% (epoch=320)(element=6266) loss = 0.004 	error progress = 1.7667%
+completion: 68% (epoch=340)(element=6266) loss = 0.002 	error progress = 1.74967%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.73385%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.71881%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.70399%
+completion: 84% (epoch=420)(element=6266) loss = 0.003 	error progress = 1.68988%
+completion: 88% (epoch=440)(element=6266) loss = 0.001 	error progress = 1.67681%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.66475%
+completion: 96% (epoch=480)(element=6266) loss = 0.001 	error progress = 1.65287%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.64152%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.8%	
+#FPplusFN=2089	
+minError=212	minErrorIndex=1	globalThreshold =-1.1969211634121	
+metrics area_roc = 92.53%	
+(beta) metrics area_precision_recall = 71.74%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 196 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 320 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 38 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,535 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.68	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.62 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.73 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus200_hl3_time1524293116
+	
+$$$ hidden_units = 225	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.004 	error progress = 2.79457%
+completion: 8% (epoch=40)(element=6266) loss = 0 	error progress = 2.46558%
+completion: 12% (epoch=60)(element=6266) loss = 0.004 	error progress = 2.30629%
+completion: 16% (epoch=80)(element=6266) loss = 0.001 	error progress = 2.20245%
+completion: 20% (epoch=100)(element=6266) loss = 0.001 	error progress = 2.12465%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.06317%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 2.01462%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.97382%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 1.93714%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.90569%
+completion: 44% (epoch=220)(element=6266) loss = 0.001 	error progress = 1.87694%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 1.85118%
+completion: 52% (epoch=260)(element=6266) loss = 0.003 	error progress = 1.82768%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.80603%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.78583%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.76713%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.74962%
+completion: 72% (epoch=360)(element=6266) loss = 0.003 	error progress = 1.73289%
+completion: 76% (epoch=380)(element=6266) loss = 0.001 	error progress = 1.71809%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 1.7031%
+completion: 84% (epoch=420)(element=6266) loss = 0.002 	error progress = 1.68961%
+completion: 88% (epoch=440)(element=6266) loss = 0.001 	error progress = 1.67619%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.66368%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.65208%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.64077%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.89%	
+#FPplusFN=2089	
+minError=214	minErrorIndex=1	globalThreshold =-1.1573311296326	
+metrics area_roc = 92.31%	
+(beta) metrics area_precision_recall = 72.13%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 183 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 333 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 49 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,524 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.69	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.65 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.97 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.74 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus225_hl3_time1524295104
+	
+$$$ hidden_units = 250	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.004 	error progress = 2.74483%
+completion: 8% (epoch=40)(element=6266) loss = 0.01 	error progress = 2.43196%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.27379%
+completion: 16% (epoch=80)(element=6266) loss = 0.01 	error progress = 2.17049%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.09509%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.03433%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 1.98679%
+completion: 32% (epoch=160)(element=6266) loss = 0.001 	error progress = 1.94589%
+completion: 36% (epoch=180)(element=6266) loss = 0.006 	error progress = 1.91192%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.87985%
+completion: 44% (epoch=220)(element=6266) loss = 0.001 	error progress = 1.85108%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 1.82532%
+completion: 52% (epoch=260)(element=6266) loss = 0.001 	error progress = 1.80247%
+completion: 56% (epoch=280)(element=6266) loss = 0.003 	error progress = 1.78138%
+completion: 60% (epoch=300)(element=6266) loss = 0.001 	error progress = 1.76157%
+completion: 64% (epoch=320)(element=6266) loss = 0.002 	error progress = 1.74276%
+completion: 68% (epoch=340)(element=6266) loss = 0.002 	error progress = 1.72577%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.70967%
+completion: 76% (epoch=380)(element=6266) loss = 0.001 	error progress = 1.69443%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 1.67986%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.666%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.65269%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.63979%
+completion: 96% (epoch=480)(element=6266) loss = 0.001 	error progress = 1.62754%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.61571%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 88.99%	
+#FPplusFN=2089	
+minError=217	minErrorIndex=1	globalThreshold =-1.2306487220712	
+metrics area_roc = 92.44%	
+(beta) metrics area_precision_recall = 70.5%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 172 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 344 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 58 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,515 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.69	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.67 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.96 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.75 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus250_hl3_time1524297397
+	
+$$$ hidden_units = 275	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.001 	error progress = 2.74817%
+completion: 8% (epoch=40)(element=6266) loss = 0.004 	error progress = 2.42145%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.26152%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.15546%
+completion: 20% (epoch=100)(element=6266) loss = 0.001 	error progress = 2.07971%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.01898%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 1.96996%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.9285%
+completion: 36% (epoch=180)(element=6266) loss = 0.002 	error progress = 1.89294%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.86142%
+completion: 44% (epoch=220)(element=6266) loss = 0.008 	error progress = 1.83354%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.80867%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.78619%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.76519%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.74466%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.72647%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.70857%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 1.69209%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.67712%
+completion: 80% (epoch=400)(element=6266) loss = 0.001 	error progress = 1.66241%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.64818%
+completion: 88% (epoch=440)(element=6266) loss = 0.001 	error progress = 1.635%
+completion: 92% (epoch=460)(element=6266) loss = 0.001 	error progress = 1.62228%
+completion: 96% (epoch=480)(element=6266) loss = 0.001 	error progress = 1.61015%
+completion: 100% (epoch=500)(element=6266) loss = 0.001 	error progress = 1.59843%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 89.95%	
+#FPplusFN=2089	
+minError=206	minErrorIndex=1	globalThreshold =-1.1422095713307	
+metrics area_roc = 92.9%	
+(beta) metrics area_precision_recall = 72%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 182 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 334 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 28 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,545 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.72	::::
+	
+accuracy = 0.9 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.65 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.76 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus275_hl3_time1524299995
+	
+$$$ hidden_units = 300	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.005 	error progress = 2.72165%
+completion: 8% (epoch=40)(element=6266) loss = 0.001 	error progress = 2.40026%
+completion: 12% (epoch=60)(element=6266) loss = 0.001 	error progress = 2.2474%
+completion: 16% (epoch=80)(element=6266) loss = 0.003 	error progress = 2.14875%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.0795%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 2.02313%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 1.9765%
+completion: 32% (epoch=160)(element=6266) loss = 0.007 	error progress = 1.93673%
+completion: 36% (epoch=180)(element=6266) loss = 0.001 	error progress = 1.90195%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.87018%
+completion: 44% (epoch=220)(element=6266) loss = 0 	error progress = 1.84227%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.81767%
+completion: 52% (epoch=260)(element=6266) loss = 0.002 	error progress = 1.79411%
+completion: 56% (epoch=280)(element=6266) loss = 0 	error progress = 1.77243%
+completion: 60% (epoch=300)(element=6266) loss = 0.001 	error progress = 1.75213%
+completion: 64% (epoch=320)(element=6266) loss = 0.003 	error progress = 1.73331%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.71547%
+completion: 72% (epoch=360)(element=6266) loss = 0 	error progress = 1.69943%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.68356%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.66859%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.65445%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.64086%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.62758%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.61495%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.60289%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 89.23%	
+#FPplusFN=2089	
+minError=216	minErrorIndex=1	globalThreshold =-1.1529743878484	
+metrics area_roc = 92.51%	
+(beta) metrics area_precision_recall = 72.96%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 185 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 331 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 40 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,533 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.7	::::
+	
+accuracy = 0.89 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.64 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.97 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.75 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus300_hl3_time1524302949
+	
+$$$ hidden_units = 350	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.004 	error progress = 2.67217%
+completion: 8% (epoch=40)(element=6266) loss = 0.002 	error progress = 2.37079%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.21773%
+completion: 16% (epoch=80)(element=6266) loss = 0.001 	error progress = 2.1177%
+completion: 20% (epoch=100)(element=6266) loss = 0.002 	error progress = 2.04426%
+completion: 24% (epoch=120)(element=6266) loss = 0.005 	error progress = 1.98452%
+completion: 28% (epoch=140)(element=6266) loss = 0.001 	error progress = 1.93443%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.89361%
+completion: 36% (epoch=180)(element=6266) loss = 0 	error progress = 1.85671%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.82475%
+completion: 44% (epoch=220)(element=6266) loss = 0.001 	error progress = 1.7949%
+completion: 48% (epoch=240)(element=6266) loss = 0.001 	error progress = 1.76861%
+completion: 52% (epoch=260)(element=6266) loss = 0.002 	error progress = 1.74472%
+completion: 56% (epoch=280)(element=6266) loss = 0.001 	error progress = 1.72212%
+completion: 60% (epoch=300)(element=6266) loss = 0.001 	error progress = 1.70114%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.68175%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.66337%
+completion: 72% (epoch=360)(element=6266) loss = 0.003 	error progress = 1.64563%
+completion: 76% (epoch=380)(element=6266) loss = 0 	error progress = 1.62941%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.61371%
+completion: 84% (epoch=420)(element=6266) loss = 0 	error progress = 1.59865%
+completion: 88% (epoch=440)(element=6266) loss = 0 	error progress = 1.5845%
+completion: 92% (epoch=460)(element=6266) loss = 0.001 	error progress = 1.57121%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.55822%
+completion: 100% (epoch=500)(element=6266) loss = 0.001 	error progress = 1.54596%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 89.61%	
+#FPplusFN=2089	
+minError=215	minErrorIndex=1	globalThreshold =-1.1373279995762	
+metrics area_roc = 92.68%	
+(beta) metrics area_precision_recall = 68.79%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 164 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 352 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 53 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,520 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.71	::::
+	
+accuracy = 0.9 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.68 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.97 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.76 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus350_hl3_time1524306801
+	
+$$$ hidden_units = 400	 hidden_layers = 3 $$$	
+XAVIER_INITIALIZATION = true	
+completion: 4% (epoch=20)(element=6266) loss = 0.004 	error progress = 2.66023%
+completion: 8% (epoch=40)(element=6266) loss = 0.001 	error progress = 2.35813%
+completion: 12% (epoch=60)(element=6266) loss = 0 	error progress = 2.20617%
+completion: 16% (epoch=80)(element=6266) loss = 0 	error progress = 2.10734%
+completion: 20% (epoch=100)(element=6266) loss = 0 	error progress = 2.03344%
+completion: 24% (epoch=120)(element=6266) loss = 0 	error progress = 1.97367%
+completion: 28% (epoch=140)(element=6266) loss = 0 	error progress = 1.92518%
+completion: 32% (epoch=160)(element=6266) loss = 0 	error progress = 1.88299%
+completion: 36% (epoch=180)(element=6266) loss = 0.001 	error progress = 1.8471%
+completion: 40% (epoch=200)(element=6266) loss = 0 	error progress = 1.81423%
+completion: 44% (epoch=220)(element=6266) loss = 0.003 	error progress = 1.78388%
+completion: 48% (epoch=240)(element=6266) loss = 0 	error progress = 1.75764%
+completion: 52% (epoch=260)(element=6266) loss = 0 	error progress = 1.73344%
+completion: 56% (epoch=280)(element=6266) loss = 0.001 	error progress = 1.71158%
+completion: 60% (epoch=300)(element=6266) loss = 0 	error progress = 1.69047%
+completion: 64% (epoch=320)(element=6266) loss = 0 	error progress = 1.67108%
+completion: 68% (epoch=340)(element=6266) loss = 0 	error progress = 1.65321%
+completion: 72% (epoch=360)(element=6266) loss = 0.001 	error progress = 1.6361%
+completion: 76% (epoch=380)(element=6266) loss = 0.002 	error progress = 1.61933%
+completion: 80% (epoch=400)(element=6266) loss = 0 	error progress = 1.60299%
+completion: 84% (epoch=420)(element=6266) loss = 0.002 	error progress = 1.58801%
+completion: 88% (epoch=440)(element=6266) loss = 0.001 	error progress = 1.57372%
+completion: 92% (epoch=460)(element=6266) loss = 0 	error progress = 1.55967%
+completion: 96% (epoch=480)(element=6266) loss = 0 	error progress = 1.5463%
+completion: 100% (epoch=500)(element=6266) loss = 0 	error progress = 1.53355%
+
+
+### executeTest(perceptron, validation_patient_profile)	
+
+Correct predictions = 89.61%	
+#FPplusFN=2089	
+minError=206	minErrorIndex=1	globalThreshold =-1.1723686830678	
+metrics area_roc = 92.81%	
+(beta) metrics area_precision_recall = 70.11%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 172 / 516	 (truth == 1) & (prediction < threshold)	
+ TP = 344 / 516	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 45 / 1,573	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,528 / 1,573	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.71	::::
+	
+accuracy = 0.9 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.67 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.97 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.76 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus400_hl3_time1524311347
+	
+@ @ [1] 	AUPR = 41.73% 	MCC = 0.26	F1_score  = 0.2	AUROC  = 73.98% 	hidden units = 5 	hidden layers = 1  @ @ 
+@ @ [2] 	AUPR = 64.34% 	MCC = 0.42	F1_score  = 0.41	AUROC  = 89.51% 	hidden units = 10 	hidden layers = 1  @ @ 
+@ @ [3] 	AUPR = 69.17% 	MCC = 0.57	F1_score  = 0.6	AUROC  = 90.55% 	hidden units = 25 	hidden layers = 1  @ @ 
+@ @ [4] 	AUPR = 71.03% 	MCC = 0.63	F1_score  = 0.67	AUROC  = 90.78% 	hidden units = 50 	hidden layers = 1  @ @ 
+@ @ [5] 	AUPR = 70.39% 	MCC = 0.61	F1_score  = 0.64	AUROC  = 91.41% 	hidden units = 75 	hidden layers = 1  @ @ 
+@ @ [6] 	AUPR = 72.82% 	MCC = 0.65	F1_score  = 0.69	AUROC  = 91.61% 	hidden units = 100 	hidden layers = 1  @ @ 
+@ @ [7] 	AUPR = 72.7% 	MCC = 0.64	F1_score  = 0.68	AUROC  = 91.97% 	hidden units = 125 	hidden layers = 1  @ @ 
+@ @ [8] 	AUPR = 73.51% 	MCC = 0.66	F1_score  = 0.7	AUROC  = 91.69% 	hidden units = 150 	hidden layers = 1  @ @ 
+@ @ [9] 	AUPR = 66.35% 	MCC = 0.67	F1_score  = 0.71	AUROC  = 91.47% 	hidden units = 175 	hidden layers = 1  @ @ 
+@ @ [10] 	AUPR = 72.14% 	MCC = 0.65	F1_score  = 0.69	AUROC  = 92.14% 	hidden units = 200 	hidden layers = 1  @ @ 
+@ @ [11] 	AUPR = 71.24% 	MCC = 0.67	F1_score  = 0.72	AUROC  = 91.4% 	hidden units = 225 	hidden layers = 1  @ @ 
+@ @ [12] 	AUPR = 72.65% 	MCC = 0.69	F1_score  = 0.73	AUROC  = 91.38% 	hidden units = 250 	hidden layers = 1  @ @ 
+@ @ [13] 	AUPR = 71.99% 	MCC = 0.67	F1_score  = 0.71	AUROC  = 92.19% 	hidden units = 275 	hidden layers = 1  @ @ 
+@ @ [14] 	AUPR = 72.98% 	MCC = 0.65	F1_score  = 0.7	AUROC  = 92.66% 	hidden units = 300 	hidden layers = 1  @ @ 
+@ @ [15] 	AUPR = 71.92% 	MCC = 0.68	F1_score  = 0.73	AUROC  = 91.8% 	hidden units = 350 	hidden layers = 1  @ @ 
+@ @ [16] 	AUPR = 74.01% 	MCC = 0.66	F1_score  = 0.7	AUROC  = 92.21% 	hidden units = 400 	hidden layers = 1  @ @ 
+@ @ [17] 	AUPR = 18.03% 	MCC = -2	F1_score  = 0	AUROC  = 61.88% 	hidden units = 5 	hidden layers = 2  @ @ 
+@ @ [18] 	AUPR = 60.62% 	MCC = 0.42	F1_score  = 0.43	AUROC  = 86.37% 	hidden units = 10 	hidden layers = 2  @ @ 
+@ @ [19] 	AUPR = 60.14% 	MCC = -2	F1_score  = 0	AUROC  = 89.57% 	hidden units = 25 	hidden layers = 2  @ @ 
+@ @ [20] 	AUPR = 69.57% 	MCC = 0.55	F1_score  = 0.58	AUROC  = 91.06% 	hidden units = 50 	hidden layers = 2  @ @ 
+@ @ [21] 	AUPR = 70.41% 	MCC = 0.66	F1_score  = 0.71	AUROC  = 91.86% 	hidden units = 75 	hidden layers = 2  @ @ 
+@ @ [22] 	AUPR = 72.93% 	MCC = 0.66	F1_score  = 0.7	AUROC  = 92.35% 	hidden units = 100 	hidden layers = 2  @ @ 
+@ @ [23] 	AUPR = 72.59% 	MCC = 0.67	F1_score  = 0.72	AUROC  = 91.44% 	hidden units = 125 	hidden layers = 2  @ @ 
+@ @ [24] 	AUPR = 70.01% 	MCC = 0.65	F1_score  = 0.7	AUROC  = 92.61% 	hidden units = 150 	hidden layers = 2  @ @ 
+@ @ [25] 	AUPR = 71.26% 	MCC = 0.7	F1_score  = 0.75	AUROC  = 92.43% 	hidden units = 175 	hidden layers = 2  @ @ 
+@ @ [26] 	AUPR = 72.41% 	MCC = 0.66	F1_score  = 0.71	AUROC  = 92.74% 	hidden units = 200 	hidden layers = 2  @ @ 
+@ @ [27] 	AUPR = 73.74% 	MCC = 0.68	F1_score  = 0.73	AUROC  = 92.67% 	hidden units = 225 	hidden layers = 2  @ @ 
+@ @ [28] 	AUPR = 71.76% 	MCC = 0.7	F1_score  = 0.75	AUROC  = 91.87% 	hidden units = 250 	hidden layers = 2  @ @ 
+@ @ [29] 	AUPR = 71.79% 	MCC = 0.7	F1_score  = 0.75	AUROC  = 92.75% 	hidden units = 275 	hidden layers = 2  @ @ 
+@ @ [30] 	AUPR = 70.32% 	MCC = 0.68	F1_score  = 0.74	AUROC  = 92.41% 	hidden units = 300 	hidden layers = 2  @ @ 
+@ @ [31] 	AUPR = 72.83% 	MCC = 0.69	F1_score  = 0.74	AUROC  = 92.76% 	hidden units = 350 	hidden layers = 2  @ @ 
+@ @ [32] 	AUPR = 71.09% 	MCC = 0.67	F1_score  = 0.73	AUROC  = 92.56% 	hidden units = 400 	hidden layers = 2  @ @ 
+@ @ [33] 	AUPR = 37.89% 	MCC = 0.18	F1_score  = 0.11	AUROC  = 67.36% 	hidden units = 5 	hidden layers = 3  @ @ 
+@ @ [34] 	AUPR = 37.64% 	MCC = -2	F1_score  = 0	AUROC  = 79.92% 	hidden units = 10 	hidden layers = 3  @ @ 
+@ @ [35] 	AUPR = 67.18% 	MCC = 0.47	F1_score  = 0.46	AUROC  = 89.44% 	hidden units = 25 	hidden layers = 3  @ @ 
+@ @ [36] 	AUPR = 65.26% 	MCC = 0.44	F1_score  = 0.44	AUROC  = 90.43% 	hidden units = 50 	hidden layers = 3  @ @ 
+@ @ [37] 	AUPR = 66.32% 	MCC = 0.54	F1_score  = 0.59	AUROC  = 90.99% 	hidden units = 75 	hidden layers = 3  @ @ 
+@ @ [38] 	AUPR = 71.92% 	MCC = 0.61	F1_score  = 0.65	AUROC  = 92.32% 	hidden units = 100 	hidden layers = 3  @ @ 
+@ @ [39] 	AUPR = 70.09% 	MCC = 0.6	F1_score  = 0.65	AUROC  = 92.04% 	hidden units = 125 	hidden layers = 3  @ @ 
+@ @ [40] 	AUPR = 70.81% 	MCC = 0.62	F1_score  = 0.65	AUROC  = 92.32% 	hidden units = 150 	hidden layers = 3  @ @ 
+@ @ [41] 	AUPR = 70.76% 	MCC = 0.66	F1_score  = 0.71	AUROC  = 91.71% 	hidden units = 175 	hidden layers = 3  @ @ 
+@ @ [42] 	AUPR = 71.74% 	MCC = 0.68	F1_score  = 0.73	AUROC  = 92.53% 	hidden units = 200 	hidden layers = 3  @ @ 
+@ @ [43] 	AUPR = 72.13% 	MCC = 0.69	F1_score  = 0.74	AUROC  = 92.31% 	hidden units = 225 	hidden layers = 3  @ @ 
+@ @ [44] 	AUPR = 70.5% 	MCC = 0.69	F1_score  = 0.75	AUROC  = 92.44% 	hidden units = 250 	hidden layers = 3  @ @ 
+@ @ [45] 	AUPR = 72% 	MCC = 0.72	F1_score  = 0.76	AUROC  = 92.9% 	hidden units = 275 	hidden layers = 3  @ @ 
+@ @ [46] 	AUPR = 72.96% 	MCC = 0.7	F1_score  = 0.75	AUROC  = 92.51% 	hidden units = 300 	hidden layers = 3  @ @ 
+@ @ [47] 	AUPR = 68.79% 	MCC = 0.71	F1_score  = 0.76	AUROC  = 92.68% 	hidden units = 350 	hidden layers = 3  @ @ 
+@ @ [48] 	AUPR = 70.11% 	MCC = 0.71	F1_score  = 0.76	AUROC  = 92.81% 	hidden units = 400 	hidden layers = 3  @ @ 
+
+modelFileVect[45]
+modelFileToLoad =./models/model_hus275_hl3_time1524299995	
+
+
+### executeTest(loadedModel, test_patient_profile)	
+
+Correct predictions = 89.61%	
+#FPplusFN=2088	
+minError=188	minErrorIndex=1	globalThreshold =-1.2288908593242	
+metrics area_roc = 95.18%	
+(beta) metrics area_precision_recall = 77.39%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 185 / 535	 (truth == 1) & (prediction < threshold)	
+ TP = 350 / 535	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 32 / 1,553	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,521 / 1,553	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.72	::::
+	
+accuracy = 0.9 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = 0, best =  1]	
+recall = 0.65 = tp / (tp + fn) 	  	 [worst = 0, best =  1]	
+specificity = 0.98 = tn / (tn + fp) 	  	 [worst = 0, best =  1]	
+f1_score = 0.76 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+':':':':' lastMCC = 0.72  lastF1score = 0.76 ':':':':'	
+command: rm ./models/model_hus5_hl1_time1524250105 
+command: rm ./models/model_hus10_hl1_time1524250469 
+command: rm ./models/model_hus25_hl1_time1524250847 
+command: rm ./models/model_hus50_hl1_time1524251262 
+command: rm ./models/model_hus75_hl1_time1524251724 
+command: rm ./models/model_hus100_hl1_time1524252239 
+command: rm ./models/model_hus125_hl1_time1524252816 
+command: rm ./models/model_hus150_hl1_time1524253458 
+command: rm ./models/model_hus175_hl1_time1524254191 
+command: rm ./models/model_hus200_hl1_time1524254995 
+command: rm ./models/model_hus225_hl1_time1524255897 
+command: rm ./models/model_hus250_hl1_time1524256907 
+command: rm ./models/model_hus275_hl1_time1524258055 
+command: rm ./models/model_hus300_hl1_time1524259309 
+command: rm ./models/model_hus350_hl1_time1524260848 
+command: rm ./models/model_hus400_hl1_time1524262707 
+command: rm ./models/model_hus5_hl2_time1524263191 
+command: rm ./models/model_hus10_hl2_time1524263678 
+command: rm ./models/model_hus25_hl2_time1524264184 
+command: rm ./models/model_hus50_hl2_time1524264751 
+command: rm ./models/model_hus75_hl2_time1524265389 
+command: rm ./models/model_hus100_hl2_time1524266121 
+command: rm ./models/model_hus125_hl2_time1524266963 
+command: rm ./models/model_hus150_hl2_time1524267927 
+command: rm ./models/model_hus175_hl2_time1524269026 
+command: rm ./models/model_hus200_hl2_time1524270300 
+command: rm ./models/model_hus225_hl2_time1524271738 
+command: rm ./models/model_hus250_hl2_time1524273383 
+command: rm ./models/model_hus275_hl2_time1524275247 
+command: rm ./models/model_hus300_hl2_time1524277375 
+command: rm ./models/model_hus350_hl2_time1524279994 
+command: rm ./models/model_hus400_hl2_time1524283204 
+command: rm ./models/model_hus5_hl3_time1524283807 
+command: rm ./models/model_hus10_hl3_time1524284411 
+command: rm ./models/model_hus25_hl3_time1524285047 
+command: rm ./models/model_hus50_hl3_time1524285766 
+command: rm ./models/model_hus75_hl3_time1524286577 
+command: rm ./models/model_hus100_hl3_time1524287510 
+command: rm ./models/model_hus125_hl3_time1524288607 
+command: rm ./models/model_hus150_hl3_time1524289899 
+command: rm ./models/model_hus175_hl3_time1524291394 
+command: rm ./models/model_hus200_hl3_time1524293116 
+command: rm ./models/model_hus225_hl3_time1524295104 
+command: rm ./models/model_hus250_hl3_time1524297397 
+command: rm ./models/model_hus275_hl3_time1524299995 
+command: rm ./models/model_hus300_hl3_time1524302949 
+command: rm ./models/model_hus350_hl3_time1524306801 
+command: rm ./models/model_hus400_hl3_time1524311347 
+
+duration  complete execution: 61,607 seconds	
+duration  complete execution: 00 days, 17 hours, 06 minutes, 47 seconds	

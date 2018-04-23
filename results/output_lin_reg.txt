@@ -1,0 +1,26 @@
+[Creating the subsets for the values]
+[Creating the subsets for the labels "1"-"0"]
+[Training the linear regression model on training set & applying the linear regression model to the validation set]
+
+  Precision-recall curve
+
+    Area under curve (Integral):
+     NA 
+
+    Area under curve (Davis & Goadrich):
+    cannot be computed for weighted data
+
+    Curve not computed ( can be done by using curve=TRUE )
+
+MCC = 0.6812046 (worst possible: -1; best possible: +1)
+Validation: the MCC value is 0.6812046	 (worst possible: -1; best possible: +1)
+
+[Training the linear regression model on training set & applying the linear regression to test set]
+
+MCC = 0.6294927 (worst possible: -1; best possible: +1)
+f1_score = 0.7229602 (worst: 0.0; best: 1.0)
+accuracy = 0.8602202 (worst: 0.0; best: 1.0)
+
+true positive rate = recall = 0.7215909 (worst: 0.0; best: 1.0)
+true negative rate = specificity = 0.9071108 (worst: 0.0; best: 1.0)
+

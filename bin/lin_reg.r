@@ -3,37 +3,13 @@
 
 setwd(".")
 options(stringsAsFactors = FALSE)
-library("clusterSim")
+# library("clusterSim")
 library("e1071")
 library("PRROC")
 tau = 0.5
 
-# Matthews correlation coefficient
-mcc <- function (actual, predicted)
-{
-  # Compute the Matthews correlation coefficient (MCC) score
-  # Jeff Hebert 9/1/2016
-  # Geoffrey Anderson 10/14/2016 
-  # Added zero denominator handling.
-  # Avoided overflow error on large-ish products in denominator.
-  #
-  # actual = vector of true outcomes, 1 = Positive, 0 = Negative
-  # predicted = vector of predicted outcomes, 1 = Positive, 0 = Negative
-  # function returns MCC
-  
-  TP <- sum(actual == 1 & predicted == 1)
-  TN <- sum(actual == 0 & predicted == 0)
-  FP <- sum(actual == 0 & predicted == 1)
-  FN <- sum(actual == 1 & predicted == 0)
-  #TP;TN;FP;FN # for debugging
-  sum1 <- TP+FP; sum2 <-TP+FN ; sum3 <-TN+FP ; sum4 <- TN+FN;
-  denom <- as.double(sum1)*sum2*sum3*sum4 # as.double to avoid overflow error on large products
-  if (any(sum1==0, sum2==0, sum3==0, sum4==0)) {
-    denom <- 1
-  }
-  mcc <- ((TP*TN)-(FP*FN)) / sqrt(denom)
-  return(mcc)
-}
+source("./confusion_matrix_rates.r")
+
 
 prc_data_norm <- read.csv(file="../data/LungCancerDataset_AllRecords_NORM.csv",head=TRUE,sep=",",stringsAsFactors=FALSE)
 
@@ -114,10 +90,12 @@ mcc_array <- character(length(maxK))
   mcc_outcome <- mcc(prc_data_validation_labels_binary, prc_data_validation_pred_binary)
   cat("Validation: the MCC value is ",mcc_outcome, "\t (worst possible: -1; best possible: +1)\n", sep="")
 
+  
+cat("\n @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ \n")
 
 # apply k-NN with k_best to the test set
 
-cat("[Training the linear regression model on training set & applying the linear regression to test set]\n", sep="")
+cat("\n[Training the linear regression model on training set & applying the linear regression to test set]\n", sep="")
 #prc_data_test_pred <- knn(train = prc_data_train, test = prc_data_test, cl = prc_data_train_labels, k=bestK)
 
 # svm_model_new <- svm(Biopsy ~ ., cost=bestK, data=prc_data_train, method = "C-classification", kernel = "linear")
@@ -147,11 +125,8 @@ prc_data_test_pred_binary[prc_data_test_pred_binary<tau]<-0
 # print(pr_curve_test)
 
 
-  
-
 mcc_outcome <- mcc(prc_data_test_labels_binary, prc_data_test_pred_binary)
-cat("\nThe MCC value is ",mcc_outcome, " (worst possible: -1; best possible: +1)\n\n\n", sep="")
 
-
+confusion_matrix_rates(prc_data_test_labels_binary, prc_data_test_pred_binary)
 
 

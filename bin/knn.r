@@ -1,35 +1,10 @@
 setwd(".")
 options(stringsAsFactors = FALSE)
-library("clusterSim")
+# library("clusterSim")
 library("PRROC")
 library("e1071")
 
-# Matthews correlation coefficient
-mcc <- function (actual, predicted)
-{
-  # Compute the Matthews correlation coefficient (MCC) score
-  # Jeff Hebert 9/1/2016
-  # Geoffrey Anderson 10/14/2016 
-  # Added zero denominator handling.
-  # Avoided overflow error on large-ish products in denominator.
-  #
-  # actual = vector of true outcomes, 1 = Positive, 0 = Negative
-  # predicted = vector of predicted outcomes, 1 = Positive, 0 = Negative
-  # function returns MCC
-  
-  TP <- sum(actual == 1 & predicted == 1)
-  TN <- sum(actual == 0 & predicted == 0)
-  FP <- sum(actual == 0 & predicted == 1)
-  FN <- sum(actual == 1 & predicted == 0)
-  #TP;TN;FP;FN # for debugging
-  sum1 <- TP+FP; sum2 <-TP+FN ; sum3 <-TN+FP ; sum4 <- TN+FN;
-  denom <- as.double(sum1)*sum2*sum3*sum4 # as.double to avoid overflow error on large products
-  if (any(sum1==0, sum2==0, sum3==0, sum4==0)) {
-    denom <- 1
-  }
-  mcc <- ((TP*TN)-(FP*FN)) / sqrt(denom)
-  return(mcc)
-}
+source("./confusion_matrix_rates.r")
 
 prc_data_norm <- read.csv(file="../data/LungCancerDataset_AllRecords_NORM.csv",head=TRUE,sep=",",stringsAsFactors=FALSE)
 
@@ -78,7 +53,7 @@ for(thisK in 1:maxK)
   # train on the training set, evaluate in the validation set by computing the MCC
   # save the MCC corresponding to the current K value
   
-  cat("[Training the kNN model (with k=",thisK,") on training set & applying the kNN model to validation set]\n", sep="")
+  cat("\n[Training the kNN model (with k=",thisK,") on training set & applying the kNN model to validation set]\n", sep="")
   
   prc_data_validation_pred <- knn(train = prc_data_train, test = prc_data_validation, cl = prc_data_train_labels, k=thisK)
   
@@ -117,6 +92,7 @@ cat("\nThe best k value is ", bestK,", corresponding to MCC=", mcc_array[bestK],
 
 cat("[Optimization end]\n\n")
 
+cat("\n @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ \n")
 
 # apply k-NN with k_best to the test set
 
@@ -141,8 +117,8 @@ pr_curve_test <- pr.curve(scores.class0 = fg_test, scores.class1 = bg_test, curv
 print(pr_curve_test)
 
 mcc_outcome <- mcc(prc_data_test_labels_binary, prc_data_test_pred_binary)
-cat("\nThe MCC value is ",mcc_outcome, " (worst possible: -1; best possible: +1)\n\n\n", sep="")
 
+confusion_matrix_rates(prc_data_test_labels_binary, prc_data_test_pred_binary)
 
 
 

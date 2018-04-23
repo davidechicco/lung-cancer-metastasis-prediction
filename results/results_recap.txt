@@ -33,5 +33,94 @@ MCC = +0.67
 MCC = +0.60
 
 
+=== First complete test on my laptop ===
+	
+accuracy = 0.91 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = -1, best =  +1]	
+f1_score = 0.79 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+Saved model file: ./models/model_hus400_hl3_time1524216325
+	
+@ @ [1] 	AUPR = 74.83% 	MCC = 0.67	F1_score  = 0.71	AUROC  = 93.59% 	hidden units = 5 	hidden layers = 1  @ @ 
+@ @ [2] 	AUPR = 72.35% 	MCC = 0.66	F1_score  = 0.69	AUROC  = 91.72% 	hidden units = 10 	hidden layers = 1  @ @ 
+@ @ [3] 	AUPR = 71.82% 	MCC = 0.68	F1_score  = 0.73	AUROC  = 90.62% 	hidden units = 25 	hidden layers = 1  @ @ 
+@ @ [4] 	AUPR = 62.07% 	MCC = 0.67	F1_score  = 0.72	AUROC  = 87.52% 	hidden units = 50 	hidden layers = 1  @ @ 
+@ @ [5] 	AUPR = 66.5% 	MCC = 0.64	F1_score  = 0.69	AUROC  = 89.38% 	hidden units = 75 	hidden layers = 1  @ @ 
+@ @ [6] 	AUPR = 64.81% 	MCC = 0.65	F1_score  = 0.72	AUROC  = 88.92% 	hidden units = 100 	hidden layers = 1  @ @ 
+@ @ [7] 	AUPR = 66.91% 	MCC = 0.68	F1_score  = 0.73	AUROC  = 88.63% 	hidden units = 125 	hidden layers = 1  @ @ 
+@ @ [8] 	AUPR = 65.43% 	MCC = 0.65	F1_score  = 0.7	AUROC  = 88.69% 	hidden units = 150 	hidden layers = 1  @ @ 
+@ @ [9] 	AUPR = 64.79% 	MCC = 0.61	F1_score  = 0.67	AUROC  = 88.65% 	hidden units = 175 	hidden layers = 1  @ @ 
+@ @ [10] 	AUPR = 67.12% 	MCC = 0.66	F1_score  = 0.71	AUROC  = 88.37% 	hidden units = 200 	hidden layers = 1  @ @ 
+@ @ [11] 	AUPR = 67.6% 	MCC = 0.66	F1_score  = 0.71	AUROC  = 88% 	hidden units = 225 	hidden layers = 1  @ @ 
+@ @ [12] 	AUPR = 68.52% 	MCC = 0.68	F1_score  = 0.73	AUROC  = 89.02% 	hidden units = 250 	hidden layers = 1  @ @ 
+@ @ [13] 	AUPR = 65.84% 	MCC = 0.66	F1_score  = 0.7	AUROC  = 89.23% 	hidden units = 275 	hidden layers = 1  @ @ 
+@ @ [14] 	AUPR = 69.26% 	MCC = 0.65	F1_score  = 0.7	AUROC  = 89.93% 	hidden units = 300 	hidden layers = 1  @ @ 
+@ @ [15] 	AUPR = 68.37% 	MCC = 0.66	F1_score  = 0.71	AUROC  = 89.66% 	hidden units = 350 	hidden layers = 1  @ @ 
+@ @ [16] 	AUPR = 68.5% 	MCC = 0.67	F1_score  = 0.72	AUROC  = 89.96% 	hidden units = 400 	hidden layers = 1  @ @ 
+@ @ [17] 	AUPR = 75.42% 	MCC = 0.66	F1_score  = 0.69	AUROC  = 93.45% 	hidden units = 5 	hidden layers = 2  @ @ 
+@ @ [18] 	AUPR = 73.56% 	MCC = 0.65	F1_score  = 0.7	AUROC  = 92.54% 	hidden units = 10 	hidden layers = 2  @ @ 
+@ @ [19] 	AUPR = 60.9% 	MCC = 0.63	F1_score  = 0.7	AUROC  = 89.77% 	hidden units = 25 	hidden layers = 2  @ @ 
+@ @ [20] 	AUPR = 43% 	MCC = 0.68	F1_score  = 0.75	AUROC  = 89.38% 	hidden units = 50 	hidden layers = 2  @ @ 
+@ @ [21] 	AUPR = 61.85% 	MCC = 0.67	F1_score  = 0.74	AUROC  = 88.02% 	hidden units = 75 	hidden layers = 2  @ @ 
+@ @ [22] 	AUPR = 63.88% 	MCC = 0.67	F1_score  = 0.73	AUROC  = 87.69% 	hidden units = 100 	hidden layers = 2  @ @ 
+@ @ [23] 	AUPR = 58.51% 	MCC = 0.7	F1_score  = 0.76	AUROC  = 88.35% 	hidden units = 125 	hidden layers = 2  @ @ 
+@ @ [24] 	AUPR = 52.49% 	MCC = 0.71	F1_score  = 0.76	AUROC  = 88.05% 	hidden units = 150 	hidden layers = 2  @ @ 
+@ @ [25] 	AUPR = 61.08% 	MCC = 0.69	F1_score  = 0.75	AUROC  = 88.58% 	hidden units = 175 	hidden layers = 2  @ @ 
+@ @ [26] 	AUPR = 45.9% 	MCC = 0.68	F1_score  = 0.73	AUROC  = 89.32% 	hidden units = 200 	hidden layers = 2  @ @ 
+@ @ [27] 	AUPR = 65.65% 	MCC = 0.7	F1_score  = 0.75	AUROC  = 90.33% 	hidden units = 225 	hidden layers = 2  @ @ 
+@ @ [28] 	AUPR = 55.82% 	MCC = 0.68	F1_score  = 0.73	AUROC  = 89.03% 	hidden units = 250 	hidden layers = 2  @ @ 
+@ @ [29] 	AUPR = 64.08% 	MCC = 0.68	F1_score  = 0.73	AUROC  = 88.84% 	hidden units = 275 	hidden layers = 2  @ @ 
+@ @ [30] 	AUPR = 63.83% 	MCC = 0.69	F1_score  = 0.75	AUROC  = 90.12% 	hidden units = 300 	hidden layers = 2  @ @ 
+@ @ [31] 	AUPR = 69.99% 	MCC = 0.71	F1_score  = 0.76	AUROC  = 89.71% 	hidden units = 350 	hidden layers = 2  @ @ 
+@ @ [32] 	AUPR = 65.93% 	MCC = 0.71	F1_score  = 0.76	AUROC  = 89.54% 	hidden units = 400 	hidden layers = 2  @ @ 
+@ @ [33] 	AUPR = 74.3% 	MCC = 0.65	F1_score  = 0.68	AUROC  = 92.09% 	hidden units = 5 	hidden layers = 3  @ @ 
+@ @ [34] 	AUPR = 48.43% 	MCC = 0.67	F1_score  = 0.72	AUROC  = 91.5% 	hidden units = 10 	hidden layers = 3  @ @ 
+@ @ [35] 	AUPR = 67.88% 	MCC = 0.69	F1_score  = 0.75	AUROC  = 91.77% 	hidden units = 25 	hidden layers = 3  @ @ 
+@ @ [36] 	AUPR = 56.09% 	MCC = 0.66	F1_score  = 0.72	AUROC  = 87.96% 	hidden units = 50 	hidden layers = 3  @ @ 
+@ @ [37] 	AUPR = 63.97% 	MCC = 0.69	F1_score  = 0.75	AUROC  = 86.59% 	hidden units = 75 	hidden layers = 3  @ @ 
+@ @ [38] 	AUPR = 63.13% 	MCC = 0.7	F1_score  = 0.76	AUROC  = 87.44% 	hidden units = 100 	hidden layers = 3  @ @ 
+@ @ [39] 	AUPR = 52.83% 	MCC = 0.69	F1_score  = 0.76	AUROC  = 89.3% 	hidden units = 125 	hidden layers = 3  @ @ 
+@ @ [40] 	AUPR = 56.36% 	MCC = 0.71	F1_score  = 0.77	AUROC  = 89.07% 	hidden units = 150 	hidden layers = 3  @ @ 
+@ @ [41] 	AUPR = 63.3% 	MCC = 0.71	F1_score  = 0.77	AUROC  = 89.05% 	hidden units = 175 	hidden layers = 3  @ @ 
+@ @ [42] 	AUPR = 55.83% 	MCC = 0.7	F1_score  = 0.76	AUROC  = 89.13% 	hidden units = 200 	hidden layers = 3  @ @ 
+@ @ [43] 	AUPR = 55.49% 	MCC = 0.74	F1_score  = 0.79	AUROC  = 89.39% 	hidden units = 225 	hidden layers = 3  @ @ 
+@ @ [44] 	AUPR = 60.65% 	MCC = 0.71	F1_score  = 0.77	AUROC  = 89.6% 	hidden units = 250 	hidden layers = 3  @ @ 
+@ @ [45] 	AUPR = 58.62% 	MCC = 0.71	F1_score  = 0.77	AUROC  = 88.98% 	hidden units = 275 	hidden layers = 3  @ @ 
+@ @ [46] 	AUPR = 69.08% 	MCC = 0.73	F1_score  = 0.78	AUROC  = 90.25% 	hidden units = 300 	hidden layers = 3  @ @ 
+@ @ [47] 	AUPR = 64.84% 	MCC = 0.71	F1_score  = 0.76	AUROC  = 88.95% 	hidden units = 350 	hidden layers = 3  @ @ 
+@ @ [48] 	AUPR = 54.82% 	MCC = 0.74	F1_score  = 0.79	AUROC  = 89.35% 	hidden units = 400 	hidden layers = 3  @ @ 
+
+modelFileVect[48]
+modelFileToLoad =./models/model_hus400_hl3_time1524216325	
+
+
+### executeTest(loadedModel, test_patient_profile)	
+
+Correct predictions = 90.71%	
+#FPplusFN=2088	
+minError=179	minErrorIndex=1	globalThreshold =-1.4183185005692	
+metrics area_roc = 92.19%	
+(beta) metrics area_precision_recall = 60.59%	
+
+duration  the new area_roc metrics ROC_AUC_computer function: 0 seconds	
+duration  the new area_roc metrics ROC_AUC_computer function: 00 days, 00 hours, 00 minutes, 00 seconds	
+TOTAL:	
+ FN = 156 / 535	 (truth == 1) & (prediction < threshold)	
+ TP = 379 / 535	 (truth == 1) & (prediction >= threshold)
+	
+ FP = 38 / 1,553	 (truth == 0) & (prediction >= threshold)	
+ TN = 1,515 / 1,553	 (truth == 0) & (prediction < threshold)
+	
+
+::::	Matthews correlation coefficient = +0.75	::::
+	
+accuracy = 0.91 = (tp + tn) / (tp + tn +fn + fp) 	  	 [worst = -1, best =  +1]	
+f1_score = 0.8 = (2*tp) / (2*tp+fp+fn) 	 [worst = 0, best = 1]	
+':':':':' lastMCC = 0.75  lastF1score = 0.8 ':':':':'	
+
+
+duration  complete execution: 69,261 seconds	
+duration  complete execution: 00 days, 19 hours, 14 minutes, 21 seconds	
+
+
+
 
 
