@@ -19,6 +19,10 @@ support vector machines
 
 `Rscript svm.r`
 
+random forest classification (top method)
+
+`Rscript random_forest_class.r`
+
 deep neural network
 
 `th ann_script_val.lua ../data/LungCancerDataset_AllRecords_NORM.csv`
