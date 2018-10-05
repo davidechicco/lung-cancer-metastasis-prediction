@@ -30,4 +30,4 @@ deep neural network
 
 ## Reference	
 
-Lynch, Chip M., Victor H. van Berkel, and Hermann B. Frieboes, "[Application of unsupervised analysis techniques to lung cancer patient data](https://doi.org/10.1371/journal.pone.0184370)",  PLOS One 12.9 (2017): e0184370
+Chip M. Lynch, Victor H. van Berkel, Hermann B. Frieboes, ["Application of unsupervised analysis techniques to lung cancer patient data"](https://doi.org/10.1371/journal.pone.0184370),  PLOS One 12.9 (2017): e0184370
