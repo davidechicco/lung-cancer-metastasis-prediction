@@ -6,7 +6,7 @@ library("e1071")
 
 source("./confusion_matrix_rates.r")
 
-prc_data_norm <- read.csv(file="../data/LungCancerDataset_AllRecords_NORM.csv",head=TRUE,sep=",",stringsAsFactors=FALSE)
+prc_data_norm <- read.csv(file="../data/LungCancerDataset_AllRecords_NORM_reduced_features.csv",head=TRUE,sep=",",stringsAsFactors=FALSE)
 
 prc_data_norm <- prc_data_norm[sample(nrow(prc_data_norm)),] # shuffle the rows
 

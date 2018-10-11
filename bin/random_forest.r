@@ -2,7 +2,7 @@
 
 library("randomForest");
 
-fileName <- "../data/LungCancerDataset_AllRecords_NORM.csv"
+fileName <- "../data/LungCancerDataset_AllRecords_NORM_reduced_features.csv"
 lung_cancer_datatable <- read.csv(fileName, header = TRUE, sep =",", stringsAsFactors = FALSE);
 
 # lung_cancer_datatable$"Typeoffollow.upexpected" <- NULL

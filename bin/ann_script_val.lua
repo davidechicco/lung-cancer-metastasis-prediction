@@ -218,10 +218,10 @@ function confusion_matrix(predictionTestVect, truthVect, threshold, printValues)
 	
 
 	recall = tp / (tp + fn)
-	print("recall = "..round(recall,2).. " = tp / (tp + fn) \t  \t [worst = 0, best =  1]");
+	print("true positive rate = recall = "..round(recall,2).. " = tp / (tp + fn) \t  \t [worst = 0, best =  1]");
 
 	specificity = tn / (tn + fp)
-	print("specificity = "..round(specificity,2).. " = tn / (tn + fp) \t  \t [worst = 0, best =  1]");
+	print("true negative rate = specificity = "..round(specificity,2).. " = tn / (tn + fp) \t  \t [worst = 0, best =  1]");
 
       	f1_score = -2
       	if (tp+fp+fn)>0 then   

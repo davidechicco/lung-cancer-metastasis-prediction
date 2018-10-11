@@ -13,7 +13,7 @@ thisNtree <- as.integer(args[1])
 
 threshold <- 0.5
 
-cancer_data_norm <- read.csv(file="../data/LungCancerDataset_AllRecords_NORM.csv",head=TRUE,sep=",",stringsAsFactors=FALSE)
+cancer_data_norm <- read.csv(file="../data/LungCancerDataset_AllRecords_NORM_reduced_features.csv",head=TRUE,sep=",",stringsAsFactors=FALSE)
 
 cat("[Randomizing the rows]\n")
 cancer_data_norm <- cancer_data_norm[sample(nrow(cancer_data_norm)),] # shuffle the rows
