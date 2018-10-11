@@ -8,8 +8,10 @@ library("randomForest");
 source("./confusion_matrix_rates.r")
 source("./utils.r")
 
-args = commandArgs(trailingOnly=TRUE)
-thisNtree <- as.integer(args[1])
+# args = commandArgs(trailingOnly=TRUE)
+# thisNtree <- as.integer(args[1])
+
+thisNtree <- 5000
 
 threshold <- 0.5
 
