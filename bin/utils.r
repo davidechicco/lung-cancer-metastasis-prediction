@@ -7,6 +7,14 @@ dec_two <- function(x) {
 
 
 # Function that reads in a vector made of binary values and prints the imbalance rates
+dataset_dim_retriever <- function(thisDataset)
+{
+  cat("[Dataset size]\n")
+  cat("number of data instances (rows) =", dim(thisDataset)[1], "\n")
+  cat("number of features (columns) =", dim(thisDataset)[2], "\n")
+}
+
+# Function that reads in a vector made of binary values and prints the imbalance rates
 imbalance_retriever <- function(thisVector)
 {
   lun <- length(table(thisVector))

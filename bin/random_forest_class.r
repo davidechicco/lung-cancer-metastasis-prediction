@@ -8,6 +8,9 @@ library("randomForest");
 source("./confusion_matrix_rates.r")
 source("./utils.r")
 
+args = commandArgs(trailingOnly=TRUE)
+thisNtree <- as.integer(args[1])
+
 threshold <- 0.5
 
 cancer_data_norm <- read.csv(file="../data/LungCancerDataset_AllRecords_NORM.csv",head=TRUE,sep=",",stringsAsFactors=FALSE)
@@ -15,6 +18,7 @@ cancer_data_norm <- read.csv(file="../data/LungCancerDataset_AllRecords_NORM.csv
 cat("[Randomizing the rows]\n")
 cancer_data_norm <- cancer_data_norm[sample(nrow(cancer_data_norm)),] # shuffle the rows
 
+dataset_dim_retriever(cancer_data_norm)
 imbalance_retriever(cancer_data_norm$Metastasis)
 
 target_index <- dim(cancer_data_norm)[2]
@@ -50,7 +54,12 @@ cancer_data_test_labels <- cancer_data_norm[test_set_first_index:test_set_last_i
 library(class)
 library(gmodels)
 
-rf_new <- randomForest(Metastasis ~ ., data=cancer_data_train, importance=TRUE, proximity=TRUE)
+cat("\n[Training the random forest classifier on the training set]\n")
+rf_new <- randomForest(Metastasis ~ ., data=cancer_data_train, importance=TRUE, proximity=TRUE, ntree=thisNtree)
+
+cat(" rf_new$ntree = ", rf_new$ntree, "\n")
+
+cat("\n[Applying the trained random forest classifier on the test set]\n")
 cancer_data_test_PRED <- predict(rf_new, cancer_data_test, type="response")
 
 cancer_data_test_PRED_binary <- as.numeric(cancer_data_test_PRED)
@@ -68,9 +77,9 @@ pr_curve_test <- pr.curve(scores.class0 = fg_test, scores.class1 = bg_test, curv
 #plot(pr_curve_test)
 # print(pr_curve_test)
 
-mcc_outcome <- mcc(cancer_data_test_labels, cancer_data_test_PRED_binary)
-
+cat("[Printing results\n")
 confusion_matrix_rates(cancer_data_test_labels, cancer_data_test_PRED_binary)
+mcc_outcome <- mcc(cancer_data_test_labels, cancer_data_test_PRED_binary)
 
 
 

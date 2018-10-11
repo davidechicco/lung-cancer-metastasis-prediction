@@ -2,6 +2,7 @@ options(stringsAsFactors = FALSE)
 # library("clusterSim")
 library("e1071")
 library("PRROC")
+source("./utils.r")
 
 # Confusion matrix rates
 confusion_matrix_rates <- function (actual, predicted)
@@ -12,17 +13,26 @@ confusion_matrix_rates <- function (actual, predicted)
   FP <- sum(actual == 0 & predicted == 1)
   FN <- sum(actual == 1 & predicted == 0)
   
+  
+  cat("\nTOTAL:\n\n")
+  cat(" FN = ", (FN), " / ", (FN+TP), "\t (truth == 1) & (prediction < threshold)\n");
+  cat(" TP = ", (TP), " / ", (FN+TP),"\t (truth == 1) & (prediction >= threshold)\n\n");
+	
+
+  cat(" FP = ", (FP), " / ", (FP+TN), "\t (truth == 0) & (prediction >= threshold)\n");
+  cat(" TN = ", (TN), " / ", (FP+TN), "\t (truth == 0) & (prediction < threshold)\n\n");
+  
   f1_score <- 2*TP / (2*TP + FP + FN)
   accuracy <- (TN+TP) / (TN + TP + FP + FN)
   
-  cat("f1_score = ", f1_score, " (worst: 0.0; best: 1.0)\n", sep="")
-  cat("accuracy = ", accuracy, " (worst: 0.0; best: 1.0)\n", sep="")
+  cat("f1_score = ", dec_two(f1_score), " (worst: 0.0; best: 1.0)\n", sep="")
+  cat("accuracy = ", dec_two(accuracy), " (worst: 0.0; best: 1.0)\n", sep="")
   
   recall <- TP / (TP + FN)
   specificity <- TN / (TN + FP)
   cat("\n")
-  cat("true positive rate = recall = ", recall, " (worst: 0.0; best: 1.0)\n", sep="")
-  cat("true negative rate = specificity = ", specificity, " (worst: 0.0; best: 1.0)\n", sep="")
+  cat("true positive rate = recall = ", dec_two(recall), " (worst: 0.0; best: 1.0)\n", sep="")
+  cat("true negative rate = specificity = ", dec_two(specificity), " (worst: 0.0; best: 1.0)\n", sep="")
   cat("\n")
 
 }
@@ -52,7 +62,7 @@ mcc <- function (actual, predicted)
   }
   mcc <- ((TP*TN)-(FP*FN)) / sqrt(denom)
   
-  cat("\nMCC = ",mcc, " (worst possible: -1; best possible: +1)\n\n", sep="")
+  cat("\nMCC = ", dec_two(mcc), " (worst possible: -1; best possible: +1)\n\n", sep="")
   
   return(mcc)
 }
