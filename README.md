@@ -26,8 +26,3 @@ random forest classification (top method)
 deep neural network
 
 `th ann_script_val.lua ../data/LungCancerDataset_AllRecords_NORM.csv`
-
-
-## Reference	
-
-Chip M. Lynch, Victor H. van Berkel, Hermann B. Frieboes, ["Application of unsupervised analysis techniques to lung cancer patient data"](https://doi.org/10.1371/journal.pone.0184370),  PLOS One 12.9 (2017): e0184370
