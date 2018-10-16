@@ -34,9 +34,8 @@ confusion_matrix_rates <- function (actual, predicted, keyword)
   recall <- TP / (TP + FN)
   specificity <- TN / (TN + FP)
 
-  cat(keyword)
-  cat("\n\nMCC \t F1_score \t accuracy \t TP_rate \t TN_rate \n")
-  cat(dec_two(mcc), " \t ", dec_two(f1_score), " \t ", dec_two(accuracy), " \t ", dec_two(recall), " \t ", dec_two(specificity), "\n\n")
+  cat("\n\n",keyword,"\t MCC \t F1_score \t accuracy \t TP_rate \t TN_rate \n")
+  cat(keyword,"\t", dec_two(mcc), " \t ", dec_two(f1_score), " \t ", dec_two(accuracy), " \t ", dec_two(recall), " \t ", dec_two(specificity), "\n\n")
  
  
 #   cat("\nMCC = ", dec_two(mcc), "\n\n", sep="")

@@ -232,7 +232,7 @@ function confusion_matrix(predictionTestVect, truthVect, threshold, printValues)
       	end
 
         print("\n\nMCC \t F1_score \t accuracy \t TP_rate \t TN_rate \n")
-        print(round(signedMCC,2).. " \t "..round(f1_score,2).." \t "..round(accuracy,2).." \t "..round(recall,2).." \t ".. round(specificity,2).."\n\n")
+        print(round(signedMCC,2).. " \t\t "..round(f1_score,2).." \t\t "..round(accuracy,2).." \t\t "..round(recall,2).." \t\t ".. round(specificity,2).."\n\n")
         
         
 
