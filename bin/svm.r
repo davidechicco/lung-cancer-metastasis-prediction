@@ -131,8 +131,8 @@ prc_data_test_pred_binary[prc_data_test_pred_binary<tau]<-0
 # 
 # print(pr_curve_test)
 
-mcc_outcome <- mcc(prc_data_test_labels_binary, prc_data_test_pred_binary)
+# mcc_outcome <- mcc(prc_data_test_labels_binary, prc_data_test_pred_binary)
 
-confusion_matrix_rates(prc_data_test_labels_binary, prc_data_test_pred_binary)
+confusion_matrix_rates(prc_data_test_labels_binary, prc_data_test_pred_binary, "@@@ Test set @@@")
 
 

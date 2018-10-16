@@ -116,9 +116,9 @@ pr_curve_test <- pr.curve(scores.class0 = fg_test, scores.class1 = bg_test, curv
 #plot(pr_curve_test)
 print(pr_curve_test)
 
-mcc_outcome <- mcc(prc_data_test_labels_binary, prc_data_test_pred_binary)
+# mcc_outcome <- mcc(prc_data_test_labels_binary, prc_data_test_pred_binary)
 
-confusion_matrix_rates(prc_data_test_labels_binary, prc_data_test_pred_binary)
+confusion_matrix_rates(prc_data_test_labels_binary, prc_data_test_pred_binary, "@@@ Test set @@@")
 
 
 

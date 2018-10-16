@@ -217,11 +217,11 @@ function confusion_matrix(predictionTestVect, truthVect, threshold, printValues)
       	print("accuracy = "..round(accuracy,2).. " = (tp + tn) / (tp + tn +fn + fp) \t  \t [worst = 0, best =  1]");
 	
 
-	recall = tp / (tp + fn)
-	print("true positive rate = recall = "..round(recall,2).. " = tp / (tp + fn) \t  \t [worst = 0, best =  1]");
+        recall = tp / (tp + fn)
+        print("true positive rate = recall = "..round(recall,2).. " = tp / (tp + fn) \t  \t [worst = 0, best =  1]");
 
-	specificity = tn / (tn + fp)
-	print("true negative rate = specificity = "..round(specificity,2).. " = tn / (tn + fp) \t  \t [worst = 0, best =  1]");
+        specificity = tn / (tn + fp)
+        print("true negative rate = specificity = "..round(specificity,2).. " = tn / (tn + fp) \t  \t [worst = 0, best =  1]");
 
       	f1_score = -2
       	if (tp+fp+fn)>0 then   
@@ -231,12 +231,10 @@ function confusion_matrix(predictionTestVect, truthVect, threshold, printValues)
      		print("f1_score CANNOT be computed because (tp+fp+fn)==0")    
       	end
 
-      	local totalRate = 0
-
-      	if MatthewsCC > -2 and f1_score > -2 then 
-      		totalRate = MatthewsCC + accuracy + f1_score 
-			-- print("total rate = "..round(totalRate,2).." in [-1, +3] that is "..round((totalRate+1)*100/4,2).."% of possible correctness");
-		end
+        print("\n\nMCC \t F1_score \t accuracy \t TP_rate \t TN_rate \n")
+        print(round(signedMCC,2).. " \t "..round(f1_score,2).." \t "..round(accuracy,2).." \t "..round(recall,2).." \t ".. round(specificity,2).."\n\n")
+        
+        
 
 		-- local numberOfPredictedOnes = tp + fp;
 		--       print("numberOfPredictedOnes = (TP + FP) = "..comma_value(numberOfPredictedOnes).." = "..round(numberOfPredictedOnes*100/(tp + tn + fn + fp),2).."%");
@@ -277,7 +275,7 @@ end
 -- ##############################
 local profile_vett = {}
 local csv = require("csv")
-local fileName = "../data/LungCancerDataset_AllRecords_NORM.csv"
+local fileName = "../data/LungCancerDataset_AllRecords_NORM_reduced_features.csv"
 --     tostring(arg[1])
 -- cervical_arranged_NORM.csv
 -- cervical_arranged_NORM_ONLY_BIOPSY_TARGET.csv

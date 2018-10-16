@@ -466,7 +466,8 @@ local profile_vett = {}
 
 
 local csv = require("csv")
-local fileName = tostring(arg[1])
+-- local fileName = tostring(arg[1])
+local fileName = "../data/LungCancerDataset_AllRecords_NORM_reduced_features.csv"
 -- cervical_arranged_NORM.csv
 -- cervical_arranged_NORM_ONLY_BIOPSY_TARGET.csv
 

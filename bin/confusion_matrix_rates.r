@@ -5,7 +5,7 @@ library("PRROC")
 source("./utils.r")
 
 # Confusion matrix rates
-confusion_matrix_rates <- function (actual, predicted)
+confusion_matrix_rates <- function (actual, predicted, keyword)
 {
   
   TP <- sum(actual == 1 & predicted == 1)
@@ -22,18 +22,32 @@ confusion_matrix_rates <- function (actual, predicted)
   cat(" FP = ", (FP), " / ", (FP+TN), "\t (truth == 0) & (prediction >= threshold)\n");
   cat(" TN = ", (TN), " / ", (FP+TN), "\t (truth == 0) & (prediction < threshold)\n\n");
   
+  sum1 <- TP+FP; sum2 <-TP+FN ; sum3 <-TN+FP ; sum4 <- TN+FN;
+  denom <- as.double(sum1)*sum2*sum3*sum4 # as.double to avoid overflow error on large products
+  if (any(sum1==0, sum2==0, sum3==0, sum4==0)) {
+    denom <- 1
+  }
+  mcc <- ((TP*TN)-(FP*FN)) / sqrt(denom)
+  
   f1_score <- 2*TP / (2*TP + FP + FN)
   accuracy <- (TN+TP) / (TN + TP + FP + FN)
-  
-  cat("f1_score = ", dec_two(f1_score), " (worst: 0.0; best: 1.0)\n", sep="")
-  cat("accuracy = ", dec_two(accuracy), " (worst: 0.0; best: 1.0)\n", sep="")
-  
   recall <- TP / (TP + FN)
   specificity <- TN / (TN + FP)
-  cat("\n")
-  cat("true positive rate = recall = ", dec_two(recall), " (worst: 0.0; best: 1.0)\n", sep="")
-  cat("true negative rate = specificity = ", dec_two(specificity), " (worst: 0.0; best: 1.0)\n", sep="")
-  cat("\n")
+
+  cat(keyword)
+  cat("\n\nMCC \t F1_score \t accuracy \t TP_rate \t TN_rate \n")
+  cat(dec_two(mcc), " \t ", dec_two(f1_score), " \t ", dec_two(accuracy), " \t ", dec_two(recall), " \t ", dec_two(specificity), "\n\n")
+ 
+ 
+#   cat("\nMCC = ", dec_two(mcc), "\n\n", sep="")
+#   
+#   cat("f1_score = ", dec_two(f1_score), "\n", sep="")
+#   cat("accuracy = ", dec_two(accuracy), "\n", sep="")
+#   
+#   cat("\n")
+#   cat("true positive rate = recall = ", dec_two(recall), "\n", sep="")
+#   cat("true negative rate = specificity = ", dec_two(specificity), "\n", sep="")
+#   cat("\n")
 
 }
 
@@ -62,7 +76,7 @@ mcc <- function (actual, predicted)
   }
   mcc <- ((TP*TN)-(FP*FN)) / sqrt(denom)
   
-  cat("\nMCC = ", dec_two(mcc), " (worst possible: -1; best possible: +1)\n\n", sep="")
+  cat("\nMCC = ", dec_two(mcc), "\n\n", sep="")
   
   return(mcc)
 }
