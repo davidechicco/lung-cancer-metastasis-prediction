@@ -25,4 +25,4 @@ random forest classification (top method)
 
 deep neural network
 
-`th ann_script_val.lua ../data/LungCancerDataset_AllRecords_NORM.csv`
+`th ann_script_val.lua`

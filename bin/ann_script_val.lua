@@ -231,7 +231,7 @@ function confusion_matrix(predictionTestVect, truthVect, threshold, printValues)
      		print("f1_score CANNOT be computed because (tp+fp+fn)==0")    
       	end
 
-        print("\n\nMCC \t F1_score \t accuracy \t TP_rate \t TN_rate \n")
+        print("\n\nMCC \t\t F1_score \t accuracy \t TP_rate \t TN_rate")
         print(round(signedMCC,2).. " \t\t "..round(f1_score,2).." \t\t "..round(accuracy,2).." \t\t "..round(recall,2).." \t\t ".. round(specificity,2).."\n\n")
         
         
