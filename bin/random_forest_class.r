@@ -80,7 +80,7 @@ pr_curve_test <- pr.curve(scores.class0 = fg_test, scores.class1 = bg_test, curv
 # print(pr_curve_test)
 
 cat("[Printing results\n")
-confusion_matrix_rates(cancer_data_test_labels, cancer_data_test_PRED_binary)
+confusion_matrix_rates(cancer_data_test_labels, cancer_data_test_PRED_binary, "@@@ Test set @@@")
 
 # mcc_outcome <- mcc(cancer_data_test_labels, cancer_data_test_PRED_binary)
 

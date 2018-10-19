@@ -6,10 +6,10 @@ print('author Davide Chicco <davide.chicco@gmail.com>');
 print(os.date("%c", os.time()));
 
 MAX_MSE = 4
-RANDOM_SEED = 42
+-- RANDOM_SEED = 42
 
-torch.manualSeed(RANDOM_SEED)
-math.randomseed(RANDOM_SEED)
+-- torch.manualSeed(RANDOM_SEED)
+-- math.randomseed(RANDOM_SEED)
 
 local timeStart = os.time()
 
@@ -330,10 +330,10 @@ print("LEARN_RATE = ".. tostring(LEARN_RATE));
 print("ITERATIONS = ".. tostring(ITERATIONS)); 
 
 -- local hidden_layers = 1 -- best is 1
-local hiddenUnitVect = {5,10,25,50,75,100,125,150,175,200,225,250,275,300,350,400}
+local hiddenUnitVect = {5,50,100,150,200,250,300,350,400}
 local hiddenLayerVect = {1, 2, 3}
 -- local hiddenLayerVect = {1}
-local n_random_starts = 20
+
 
 local max_values = {}
 -- filePointer = io.open("normalized_data_file.csv", "w")

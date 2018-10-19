@@ -50,7 +50,7 @@ mcc_array <- character(length(maxK))
 c_array = c(0.001, 0.01, 0.1, 1, 10)
 mccCounter = 1
 
-cat("\n[Optimization of the hyper-parameter k start]\n")
+cat("\n[Optimization of the hyper-parameter C start]\n")
 # optimizaion loop
 for(thisC in c_array)
 {
