@@ -81,11 +81,18 @@ train_data_balancer <- function(thisDataset, target_index, training_set_perc, IN
         positiveSetSize <- dim(positive_subset)[1]
         negativeSetSize <- dim(negative_subset)[1]
         cat("\n(balancedFlag == TRUE) \n", sep="")
+            
+       cat("positiveSetSize = ", positiveSetSize, "\n", sep="")
+       cat("negativeSetSize = ", negativeSetSize, "\n", sep="")
+        
+        training_set_numb_of_ele <- round((positiveSetSize+negativeSetSize)*training_set_perc/100,0)
+        test_set_numb_of_ele <- (positiveSetSize+negativeSetSize) - training_set_numb_of_ele
+        
+       cat("\nThe training set will contain ", training_set_numb_of_ele, " items (", training_set_perc, "%) of the data instances\n", sep="")
+       cat("The test set will contain ", test_set_numb_of_ele, " items (", test_set_perc, "%) of the data instances\n", sep="")
     }
     
-    
-    cat("positiveSetSize = ", positiveSetSize, "\n", sep="")
-    cat("negativeSetSize = ", negativeSetSize, "\n", sep="")
+
  
     title <- "Positive dataset"
     #dataset_dim_retriever(positive_subset, title)
@@ -95,14 +102,16 @@ train_data_balancer <- function(thisDataset, target_index, training_set_perc, IN
     #dataset_dim_retriever(negative_subset, title)
     #imbalance_retriever(negative_subset[ , target_index], title)
     
-    cat("\nThe training set will contain ", training_set_numb_of_ele, " items", sep="")
-    cat("\nThe test set will contain ", test_set_numb_of_ele, " items \n", sep="")
+    # cat("\nThe training set will contain ", training_set_numb_of_ele, " items", sep="")
+    # cat("\nThe test set will contain ", test_set_numb_of_ele, " items \n", sep="")
     
     # newTrainingSet <- 50% positive_subset & 50% negative_subset 
     # from index 1 to 81 (that is training_set_numb_of_ele/2 ) of positive_subset
     # and from index 1 to 81 (that is training_set_numb_of_ele/2 ) of negative_subset
-    train_set_perc_of_positives <- INPUT_PERC_POS # 38   
-    train_set_num_of_positives <- round(training_set_numb_of_ele*train_set_perc_of_positives/100, 0)
+
+    train_set_num_of_positives <- round(training_set_numb_of_ele*(INPUT_PERC_POS/100), 0)
+    # cat("INPUT_PERC_POS = ", INPUT_PERC_POS, "%\n", sep="")
+    # cat("train_set_num_of_positives = ", train_set_num_of_positives, "\n", sep="")
     train_set_num_of_negatives <- round(training_set_numb_of_ele - train_set_num_of_positives,0)
     trainPosComponent <- positive_subset[(1:train_set_num_of_positives), ]
     trainNegComponent <- negative_subset[(1:train_set_num_of_negatives), ]

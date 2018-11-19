@@ -29,7 +29,7 @@ cancer_data_norm <- cancer_data_norm[sample(nrow(cancer_data_norm)),] # shuffle 
 
 totalElements <- dim(cancer_data_norm)[1]
 
-subsets_size <- 5000
+subsets_size <- 10000
 
 target_index <- dim(cancer_data_norm)[2]
 
@@ -92,7 +92,8 @@ if (artificialBalance == TRUE) {
 }
 
 
-
+dataset_dim_retriever(cancer_data_train)
+imbalance_retriever(cancer_data_train$Metastasis)
 
 
 cat("\n[Training the random forest classifier on the training set]\n")
@@ -101,8 +102,11 @@ cat("\n[Training the random forest classifier on the training set]\n")
 allFeaturesFormula <- Metastasis ~ .
 thisFormulaTop2features <- Metastasis ~ DerivedSS1977 + RXSumm..SurgOthReg.Dis.2003..
 thisFormulaTop3features <- Metastasis ~ DerivedSS1977 + RXSumm..SurgOthReg.Dis.2003.. + T
+thisFormula_TN <- Metastasis ~ T + N
+thisFormula_TNTumorSize <- Metastasis ~ T + N + TumorSize
+thisFormula_TNTumorSizeAge <- Metastasis ~ T + N + TumorSize + Age # top predictions among the non-metastasis features
 
-selectedFormula <- thisFormulaTop2features
+selectedFormula <- thisFormula_TNTumorSizeAge
 rf_new <- randomForest(selectedFormula, data=cancer_data_train, importance=TRUE, proximity=TRUE)
 cat("\nFeatures used in this prediction: ", toString(selectedFormula), "\n\n", sep="")
 
