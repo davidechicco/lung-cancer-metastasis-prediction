@@ -7,22 +7,46 @@ tau = 0.5
 
 source("./confusion_matrix_rates.r")
 
-cancer_data_norm <- read.csv(file="../data/LungCancerDataset_AllRecords_NORM_reduced_features.csv",head=TRUE,sep=",",stringsAsFactors=FALSE)
+dataFileName <- "../data/LungCancerDataset_AllRecords_NORM_27reduced_features.csv"
+cat("dataFileName = ", dataFileName, "\n", sep="")
 
+cancer_data_norm <- read.csv(file=dataFileName,head=TRUE,sep=",",stringsAsFactors=FALSE)
 cancer_data_norm <- cancer_data_norm[sample(nrow(cancer_data_norm)),] # shuffle the rows
+
+totalElements <- dim(cancer_data_norm)[1]
+
+subsets_size <- 4000
+
+if (subsets_size != totalElements) {
+    cat("!!! ATTENTION: We are running the method on a subset of the original dataset, \n", sep="")
+    cat("!!! containing only ", subsets_size, " elements \n", sep="")
+    cat("!!! instead of ", totalElements, " elements \n", sep="")
+}
+
+cancer_data_norm <- cancer_data_norm[1:subsets_size, ]
+
+dataset_dim_retriever(cancer_data_norm)
+imbalance_retriever(cancer_data_norm$Metastasis)
 
 target_index <- dim(cancer_data_norm)[2]
 
+training_set_perce <- 60
+cat("training_set_perce = ", training_set_perce, "% \n", sep="")
+validation_set_perce <- 20
+cat("validation_set_perce = ", validation_set_perce, "% \n", sep="")
+test_set_perce <- 100 - training_set_perce - validation_set_perce
+cat("test_set_perce = ", test_set_perce, "% \n", sep="")
+
 # the training set is the first 60% of the whole dataset
 training_set_first_index <- 1 # NEW
-training_set_last_index <- round(dim(cancer_data_norm)[1]*60/100) # NEW
+training_set_last_index <- round(dim(cancer_data_norm)[1]*training_set_perce/100) # NEW
 
 # the validation set is the following 20% of the whole dataset
-validation_set_first_index <- round(dim(cancer_data_norm)[1]*60/100)+1 # NEW
-validation_set_last_index <- round(dim(cancer_data_norm)[1]*80/100) # NEW
+validation_set_first_index <- round(dim(cancer_data_norm)[1]*training_set_perce/100)+1 # NEW
+validation_set_last_index <- round(dim(cancer_data_norm)[1]*(training_set_perce+validation_set_perce)/100) # NEW
 
 # the test set is the last 20% of the whole dataset
-test_set_first_index <- round(dim(cancer_data_norm)[1]*80/100)+1 # NEW
+test_set_first_index <- round(dim(cancer_data_norm)[1]*(training_set_perce+validation_set_perce)/100)+1 # NEW
 test_set_last_index <- dim(cancer_data_norm)[1] # NEW
 
 cat("[Creating the subsets for the values]\n")
@@ -62,31 +86,25 @@ for(thisC in c_array)
   
   svm_model <- svm(cancer_data_train_labels ~ ., cost=thisC, data=cancer_data_train, method = "C-classification", kernel = "linear")
     
-  cancer_data_validation_pred <- predict(svm_model, cancer_data_validation)
+  cancer_data_validation_PRED <- predict(svm_model, cancer_data_validation)
   
-  # CrossTable(x=cancer_data_validation_labels, y=cancer_data_validation_pred, prop.chisq=FALSE)
-  
-  cancer_data_validation_labels_binary_TEMP <- replace(cancer_data_validation_labels, cancer_data_validation_labels=="M", 1)
-  cancer_data_validation_labels_binary <- replace(cancer_data_validation_labels_binary_TEMP, cancer_data_validation_labels=="B", 0)
-  cancer_data_validation_labels_binary <- as.numeric (cancer_data_validation_labels_binary)
-  # cancer_data_validation_labels_binary
-  
-  cancer_data_validation_pred_AS_CHAR <- as.character(cancer_data_validation_pred)
-  cancer_data_validation_pred_binary_TEMP <- replace(cancer_data_validation_pred_AS_CHAR, cancer_data_validation_pred_AS_CHAR=="M", 1)
-  cancer_data_validation_pred_binary <- replace(cancer_data_validation_pred_binary_TEMP, cancer_data_validation_pred_AS_CHAR=="B", 0)
-  cancer_data_validation_pred_binary <- as.numeric (cancer_data_validation_pred_binary)
-  
+  cancer_data_validation_pred_binary <- as.numeric (cancer_data_validation_PRED)  
   cancer_data_validation_pred_binary[cancer_data_validation_pred_binary>=tau]<-1
   cancer_data_validation_pred_binary[cancer_data_validation_pred_binary<tau]<-0
   
   # cancer_data_validation_pred_binary
-#   
-#   fg <- cancer_data_validation_pred[cancer_data_validation$Biopsy==1]
-#   bg <- cancer_data_validation_pred[cancer_data_validation$Biopsy==0]
-#   pr_curve <- pr.curve(scores.class0 = fg, scores.class1 = bg, curve = F)
-#   print(pr_curve)
+   fg_test <- cancer_data_validation_PRED[cancer_data_validation_labels==1]
+   bg_test <- cancer_data_validation_PRED[cancer_data_validation_labels==0]
+
+   pr_curve_val <- pr.curve(scores.class0 = fg_test, scores.class1 = bg_test, curve = F)
+   # plot(pr_curve_test)
+   print(pr_curve_val)
+
+   roc_curve_val  <- roc.curve(scores.class0 = fg_test, scores.class1 = bg_test, curve = F)
+   # plot(pr_curve_test)
+   print(roc_curve_val)
   
-  mcc_outcome <- mcc(cancer_data_validation_labels_binary, cancer_data_validation_pred_binary)
+  mcc_outcome <- mcc(cancer_data_validation_labels, cancer_data_validation_pred_binary)
   cat("When C=",thisC,", the MCC value is ",mcc_outcome, "\t (worst possible: -1; best possible: +1)\n", sep="")
   
   mcc_array[mccCounter] <- mcc_outcome
@@ -109,30 +127,25 @@ cat("\n[Training the SVM model (with the OPTIMIZED hyper-parameter C=",c_array[b
 
 svm_model_new <- svm(cancer_data_train_labels ~ ., cost=c_array[bestCindex], data=cancer_data_train, method = "C-classification", kernel = "linear")
 cancer_data_test_pred <- predict(svm_model_new, cancer_data_test)
-
-cancer_data_test_labels_binary_TEMP <- replace(cancer_data_test_labels, cancer_data_test_labels=="M", 1)
-cancer_data_test_labels_binary <- replace(cancer_data_test_labels_binary_TEMP, cancer_data_test_labels=="B", 0)
-cancer_data_test_labels_binary <- as.numeric (cancer_data_test_labels_binary)
-# cancer_data_test_labels_binary
-
-cancer_data_test_pred_AS_CHAR <- as.character(cancer_data_test_pred)
-cancer_data_test_pred_binary_TEMP <- replace(cancer_data_test_pred_AS_CHAR, cancer_data_test_pred_AS_CHAR=="M", 1)
-cancer_data_test_pred_binary <- replace(cancer_data_test_pred_binary_TEMP, cancer_data_test_pred_AS_CHAR=="B", 0)
-cancer_data_test_pred_binary <- as.numeric (cancer_data_test_pred_binary)
-
+  
+cancer_data_test_pred_binary <- as.numeric (cancer_data_test_pred)  
 cancer_data_test_pred_binary[cancer_data_test_pred_binary>=tau]<-1
 cancer_data_test_pred_binary[cancer_data_test_pred_binary<tau]<-0
-# cancer_data_test_pred_binary
-# 
-# fg_test <- cancer_data_test_pred[cancer_data_test$Biopsy==1]
-# bg_test <- cancer_data_test_pred[cancer_data_test$Biopsy==0]
-# pr_curve_test <- pr.curve(scores.class0 = fg_test, scores.class1 = bg_test, curve = F)
+  
+# cancer_data_validation_pred_binary
+fg_test <- cancer_data_test_PRED[cancer_data_test_labels==1]
+bg_test <- cancer_data_test_PRED[cancer_data_test_labels==0]
+
+pr_curve_test <- pr.curve(scores.class0 = fg_test, scores.class1 = bg_test, curve = F)
 # plot(pr_curve_test)
-# 
-# print(pr_curve_test)
+print(pr_curve_test)
+
+roc_curve_test <- roc.curve(scores.class0 = fg_test, scores.class1 = bg_test, curve = F)
+# plot(pr_curve_test)
+print(roc_curve_test)
 
 # mcc_outcome <- mcc(cancer_data_test_labels_binary, cancer_data_test_pred_binary)
 
-confusion_matrix_rates(cancer_data_test_labels_binary, cancer_data_test_pred_binary, "@@@ Test set @@@")
+confusion_matrix_rates(cancer_data_test_labels, cancer_data_test_pred_binary, "@@@ Test set @@@")
 
 
