@@ -26,3 +26,6 @@ random forest classification (top method)
 deep neural network
 
 `th ann_script_val.lua`
+
+# Question on Medical Science Stack Exchange
+[Can tumor size (T) and presence of cancer in the lymph nodes (N) in patients with lung cancer be identified on the first visit?](https://medicalsciences.stackexchange.com/questions/18040/can-tumor-size-t-and-presence-of-cancer-in-the-lymph-nodes-n-in-patients-wit)
