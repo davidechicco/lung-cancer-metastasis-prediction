@@ -5,6 +5,16 @@ dec_two <- function(x) {
   return (format(round(x, 2), nsmall = 2));
 }
 
+# function that prints two decimals of a number with sign
+signed_dec_two <- function(x) {
+
+   sign <- "+"
+   if (x<0) { sign <- "-";  }   
+ 
+  return (paste(sign, (format(round(x, 2), nsmall = 2)), sep=""))
+}
+
+
 
 # Function that reads in a vector made of binary values and prints the imbalance rates
 dataset_dim_retriever <- function(thisDataset)

@@ -1,7 +1,7 @@
 setwd(".")
 options(stringsAsFactors = FALSE)
 
-list.of.packages <- c("PRROC", "e1071", "randomForest","class", "gmodels")
+list.of.packages <- c("PRROC", "e1071", "randomForest","class", "gmodels", "formula.tools")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 
@@ -10,6 +10,7 @@ library("e1071")
 library("randomForest")
 library("class")
 library("gmodels")
+library("formula.tools")
 
 source("./confusion_matrix_rates.r")
 source("./utils.r")
@@ -29,7 +30,7 @@ cancer_data_norm <- cancer_data_norm[sample(nrow(cancer_data_norm)),] # shuffle 
 
 totalElements <- dim(cancer_data_norm)[1]
 
-subsets_size <- 10000
+subsets_size <- 10443
 
 target_index <- dim(cancer_data_norm)[2]
 
@@ -104,33 +105,21 @@ thisFormulaTop2features <- Metastasis ~ DerivedSS1977 + RXSumm..SurgOthReg.Dis.2
 thisFormulaTop3features <- Metastasis ~ DerivedSS1977 + RXSumm..SurgOthReg.Dis.2003.. + T
 thisFormula_TN <- Metastasis ~ T + N
 thisFormula_TNTumorSize <- Metastasis ~ T + N + TumorSize
+
 thisFormula_TNTumorSizeAge <- Metastasis ~ T + N + TumorSize + Age # top predictions among the non-metastasis features
 
-selectedFormula <- thisFormula_TNTumorSizeAge
+thisFormula_TNAge <- Metastasis ~ T + N  + Age
+thisFormula_TAge <- Metastasis ~ T  + Age 
+
+selectedFormula <- thisFormula_TAge
 rf_new <- randomForest(selectedFormula, data=cancer_data_train, importance=TRUE, proximity=TRUE)
-cat("\nFeatures used in this prediction: ", toString(selectedFormula), "\n\n", sep="")
+cat("\nFeatures used in this prediction: \t", as.character(selectedFormula), "\n\n", sep="")
 
 
 cat("\n[Applying the trained random forest classifier on the test set]\n")
 cancer_data_test_PRED <- predict(rf_new, cancer_data_test, type="response")
 
-fg_test <- cancer_data_test_PRED[cancer_data_test_labels==1]
-bg_test <- cancer_data_test_PRED[cancer_data_test_labels==0]
-
-pr_curve_test <- pr.curve(scores.class0 = fg_test, scores.class1 = bg_test, curve = F)
-# plot(pr_curve_test)
-print(pr_curve_test)
-
-roc_curve_test <- roc.curve(scores.class0 = fg_test, scores.class1 = bg_test, curve = F)
-# plot(pr_curve_test)
-print(roc_curve_test)
-
-cancer_data_test_PRED_binary <- as.numeric(cancer_data_test_PRED)
-cancer_data_test_PRED_binary[cancer_data_test_PRED_binary>=threshold]=1
-cancer_data_test_PRED_binary[cancer_data_test_PRED_binary<threshold]=0
-
-cat("[Printing results\n")
-confusion_matrix_rates(cancer_data_test_labels, cancer_data_test_PRED_binary, "@@@ Test set @@@")
+confusion_matrix_rates(cancer_data_test_labels, cancer_data_test_PRED, "@@@ Test set @@@")
 
 # mcc_outcome <- mcc(cancer_data_test_labels, cancer_data_test_PRED_binary)
 

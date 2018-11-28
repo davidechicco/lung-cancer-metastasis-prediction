@@ -5,6 +5,7 @@ library("PRROC")
 library("e1071")
 
 source("./confusion_matrix_rates.r")
+threshold <- 0.5
 
 dataFileName <- "../data/LungCancerDataset_AllRecords_NORM_27reduced_features.csv"
 cat("dataFileName = ", dataFileName, "\n", sep="")
@@ -81,29 +82,9 @@ for(thisK in 1:maxK)
   cat("\n[Training the kNN model (with k=",thisK,") on training set & applying the kNN model to validation set]\n", sep="")
   
   cancer_data_validation_pred <- knn(train = cancer_data_train, test = cancer_data_validation, cl = cancer_data_train_labels, k=thisK)
-  
-  # CrossTable(x=cancer_data_validation_labels, y=cancer_data_validation_pred, prop.chisq=FALSE)
-  
-  cancer_data_validation_labels_binary_TEMP <- replace(cancer_data_validation_labels, cancer_data_validation_labels=="M", 1)
-  cancer_data_validation_labels_binary <- replace(cancer_data_validation_labels_binary_TEMP, cancer_data_validation_labels=="B", 0)
-  cancer_data_validation_labels_binary <- as.numeric (cancer_data_validation_labels_binary)
-  # cancer_data_validation_labels_binary
-  
-  cancer_data_validation_pred_AS_CHAR <- as.character(cancer_data_validation_pred)
-  cancer_data_validation_pred_binary_TEMP <- replace(cancer_data_validation_pred_AS_CHAR, cancer_data_validation_pred_AS_CHAR=="M", 1)
-  cancer_data_validation_pred_binary <- replace(cancer_data_validation_pred_binary_TEMP, cancer_data_validation_pred_AS_CHAR=="B", 0)
-  cancer_data_validation_pred_binary <- as.numeric (cancer_data_validation_pred_binary)
-  # cancer_data_validation_pred_binary
-  
-  fg <- cancer_data_validation_pred[cancer_data_validation_labels==1]
-  bg <- cancer_data_validation_pred[cancer_data_validation_labels==0]
-  pr_curve <- pr.curve(scores.class0 = fg, scores.class1 = bg, curve = F)
-
-  # plot(pr_curve)
-  print(pr_curve)
-  
-  
-  mcc_outcome <- mcc(cancer_data_validation_labels_binary, cancer_data_validation_pred_binary)
+  cancer_data_validation_pred_binary <- as.numeric (cancer_data_validation_pred)-1
+   
+  mcc_outcome <- mcc(cancer_data_validation_labels, cancer_data_validation_pred_binary)
   cat("When k=",thisK,", the MCC value is ",mcc_outcome, "\t (worst possible: -1; best possible: +1)\n", sep="")
   
   mcc_array[thisK] <- mcc_outcome
@@ -124,26 +105,8 @@ cat("\n @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ \n")
 cat("[Training the kNN model (with the OPTIMIZED hyper-parameter k=",bestK,") on training set & applying the kNN to the test set]\n", sep="")
 cancer_data_test_pred <- knn(train = cancer_data_train, test = cancer_data_test, cl = cancer_data_train_labels, k=bestK)
 
-cancer_data_test_labels_binary_TEMP <- replace(cancer_data_test_labels, cancer_data_test_labels=="M", 1)
-cancer_data_test_labels_binary <- replace(cancer_data_test_labels_binary_TEMP, cancer_data_test_labels=="B", 0)
-cancer_data_test_labels_binary <- as.numeric (cancer_data_test_labels_binary)
-# cancer_data_test_labels_binary
-
-cancer_data_test_pred_AS_CHAR <- as.character(cancer_data_test_pred)
-cancer_data_test_pred_binary_TEMP <- replace(cancer_data_test_pred_AS_CHAR, cancer_data_test_pred_AS_CHAR=="M", 1)
-cancer_data_test_pred_binary <- replace(cancer_data_test_pred_binary_TEMP, cancer_data_test_pred_AS_CHAR=="B", 0)
-cancer_data_test_pred_binary <- as.numeric (cancer_data_test_pred_binary)
-# cancer_data_test_pred_binary
-
-fg_test <- cancer_data_test_pred[cancer_data_test_labels==1]
-bg_test <- cancer_data_test_pred[cancer_data_test_labels==0]
-pr_curve_test <- pr.curve(scores.class0 = fg_test, scores.class1 = bg_test, curve = F)
-#plot(pr_curve_test)
-print(pr_curve_test)
-
-# mcc_outcome <- mcc(cancer_data_test_labels_binary, cancer_data_test_pred_binary)
-
-confusion_matrix_rates(cancer_data_test_labels_binary, cancer_data_test_pred_binary, "@@@ Test set @@@")
+cancer_data_test_pred <- as.numeric(cancer_data_test_pred)-1
 
 
+confusion_matrix_rates(cancer_data_test_labels, cancer_data_test_pred, "@@@ Test set @@@")
 
