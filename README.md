@@ -39,5 +39,8 @@ deep neural network
 
 `th ann_script_val.lua`
 
+## Paper
+ Chip M. Lynch, Victor H. van Berkel, Hermann B. Frieboes. ["Application of unsupervised analysis techniques to lung cancer patient data"](https://doi.org/10.1371/journal.pone.0184370). PLoS ONE 12(9): e0184370, 2017.
+
 ## Question on Medical Science Stack Exchange
 [Can tumor size (T) and presence of cancer in the lymph nodes (N) in patients with lung cancer be identified on the first visit?](https://medicalsciences.stackexchange.com/questions/18040/can-tumor-size-t-and-presence-of-cancer-in-the-lymph-nodes-n-in-patients-wit)
